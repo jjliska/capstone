@@ -130,6 +130,16 @@ def facePosHandler():
 
   if not tempX == 0 or not tempY == 0 or not tempRotZ == 0:
     updateVariables(x+tempX,y+tempY,zRotation+tempRotZ)
+    
+    for (x, y, w, h) in faces:
+    
+      ...
+
+      # Draw the standard rectangle and store facial data in the facePos array
+      cv2.rectangle(frame, (x, y), (x+w, y+h), (0, 255, 0), 2)
+      if not (x,y,w,h) == (0,0,0,0):
+        facePos = (x,y,w,h)
+      break
 ```
 ### Smoothing Algorithm
 ![alt text](https://github.com/jjliska/capstone/blob/main/Media/Explanations/SmoothingAlgorythms.png)  
