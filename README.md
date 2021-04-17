@@ -37,7 +37,7 @@
 &ensp;<sup>[Back to Top](#AME-486---Capstone---Reflection)</sup>
 
 ##### Quick Links for Explanations
-&ensp;[End Effector](#End-Effector)
+&ensp;[End Effector](#End-Effector)  
 &ensp;[ML Facial Data to Movement](#ML-Facial-Data-to-Movement)  
 &ensp;[Smoothing Algorithm](#Smoothing-Algorithm)  
 &ensp;[Hardware](#Hardware)  
