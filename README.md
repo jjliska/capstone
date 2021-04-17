@@ -292,9 +292,9 @@ void writeStringToEEPROM(int addrOffset, const String &strToWrite){
 
 ## Links
 &ensp;<sup>[Back to Top](#AME-486---Capstone---Reflection)</sup>  
-&ensp;A collab with some of the basic inverse kinematic models we used is avialable here: [Google Colab](https://colab.research.google.com/drive/112x_Fhu4YKPZFFK7a1mo7FeFkNSDPJKg?usp=sharing)  
-&ensp;A link to all of the 3D printed parts we designed and printed: [3D Prints](https://github.com/jjliska/capstone/tree/main/3D-Prints)  
-&ensp;The Fusion 360 Model created: [Fusion 360](https://a360.co/3mX6sYx) *Note it is a large file so it will take a while to render in desktop*
+&ensp; * A collab with some of the basic inverse kinematic models we used is avialable here: [Google Colab](https://colab.research.google.com/drive/112x_Fhu4YKPZFFK7a1mo7FeFkNSDPJKg?usp=sharing)  
+&ensp; * A link to all of the 3D printed parts we designed and printed: [3D Prints](https://github.com/jjliska/capstone/tree/main/3D-Prints)  
+&ensp; * The Fusion 360 Model created: [Fusion 360](https://a360.co/3mX6sYx) &ensp;&ensp; *Note it is a large file so it will take a while to render in desktop*
 
 ## References:
 &ensp;<sup>[Back to Top](#AME-486---Capstone---Reflection)</sup>
