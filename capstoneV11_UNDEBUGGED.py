@@ -49,10 +49,7 @@ os.environ['TF_CPP_MIN_LOG_LEVEL'] = '2'
 #Serial Communication
 #---------------------------------------------------------------------------------------------------------
 try:
-  ser = serial.Serial(
-    port='COM3',
-    timeout=100
-  )
+  ser = serial.Serial(port='COM3')
   ser.flush()
 except:
   print("Serial port is not connected")

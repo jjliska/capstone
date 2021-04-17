@@ -66,6 +66,11 @@ def lawOfCosines(a,b,c):
 def distance(x1,y1,x2,y2):
   return np.sqrt((x1-x2)**2+((y1-y2)**2))
 
+def distanceMidArm(angle):
+  opp = np.cos(angle) * arm1
+  adj = np.sin(angle) * arm1
+  return opp, adj
+
 ...
 
 def angles(x,y):
@@ -75,6 +80,12 @@ def angles(x,y):
   A1 = D1 + D2
   A2 = lawOfCosines(arm1,arm2,dist)
   return A1, A2
+  
+def rotateX(ox,x,angle):
+  return ox+np.cos(angle)*(x-ox)
+
+def rotateZ(ox,x,angle):
+  return np.sin(angle)*(x-ox)
   
 ...
   
@@ -90,10 +101,11 @@ else:
 #a4 is z rotation
 a4 = np.radians(zRotation)
 ```
-</p>
-</details>
 
 &ensp;[From capstoneV11.py](https://github.com/jjliska/capstone/blob/main/capstoneV11_UNDEBUGGED.py)
+
+</p>
+</details>
 
 ### ML Facial Data to Movement
 ![alt text](https://github.com/jjliska/capstone/blob/main/Media/Explanations/FacialTracking.png)  
@@ -147,10 +159,11 @@ def facePosHandler():
   if not tempX == 0 or not tempY == 0 or not tempRotZ == 0:
     updateVariables(x+tempX,y+tempY,zRotation+tempRotZ)
 ```
-</p>
-</details>
 
 &ensp;[From capstoneV11.py](https://github.com/jjliska/capstone/blob/main/capstoneV11_UNDEBUGGED.py)
+
+</p>
+</details>
 
 ### Smoothing Algorithm
 ![alt text](https://github.com/jjliska/capstone/blob/main/Media/Explanations/SmoothingAlgorythms.png)  
@@ -191,10 +204,11 @@ def velocityHandler(velNum,direction):
       velocity[velNum] += accelVal
   return velocity[velNum]
 ```
-</p>
-</details>
 
 &ensp;[From capstoneV11.py](https://github.com/jjliska/capstone/blob/main/capstoneV11_UNDEBUGGED.py)
+
+</p>
+</details>
 
 &ensp;The second smoothing algorithm is important for several reasons. One is that the python program is not running over ever microsecond to gently smooth the servos angular position to the desired position. Thus we need to feed data for a microcontroller and smooth on that microcontroller. Servos do not have a set speed so instead we can use writeMicroseconds() to get much finer angular translation. We can then take inputs from the python every ~10 milliseconds and smooth it over that given amount of time, recalculation where the angle needs to be at to gently smooth the arm between a given input(a[num]) and the current angle(cura[num]). Typically a servo would instead move to the desired position it was fed(a[num]) as fast as it could while ours attempts to smooth it linerally to closer fit the acceleration model in the python.
 
@@ -242,10 +256,11 @@ float moveToAngle(float input, float currentAngle, Servo servoName){
   }
 }
 ```
-</p>
-</details>
 
 &ensp;[From ServoController.ino](https://github.com/jjliska/capstone/blob/main/ServoController/ServoController.ino)
+
+</p>
+</details>
 
 ### Hardware
 ![alt text](https://github.com/jjliska/capstone/blob/main/Media/Explanations/Hardware.png)  
@@ -253,7 +268,7 @@ float moveToAngle(float input, float currentAngle, Servo servoName){
 &ensp;We use a python script running on a laptop that draws information from a generic USB webcamera. The USB webcam passes visual information into a machine learning script that then creates a generic rectangle over the given persons face given the size and position of the face. This information is then stored and used by the script to effect the end effector. We do this to stabilize the LCD so that the interaction on the display is more stable for the user. The python script wworks by creating a vector model from given initial information along with the facial bounding box. This information includes length, mass, torque, and angular hard limits of the system. The system then determines what the maximum amount of force it can put on its joints before its motors will begin to slip. This information is then used in an inverse kinematic model ([stated in the End Effector](#End-Effector) portion of the explenation) of the robotic arm in whcih the end effector is moved inside of a 3D model to determine what the angles between the arms are. The information is then passed from this python script to a Teensy 3.5 in order to utilized pwm and additional vector smoothing.
 
 ### Other
-#### Angular Memory in the event of a Crash
+#### Angular Memory in the Event of a Crash
 
 <details><summary>C/C++ Script</summary>
 <p>
@@ -282,10 +297,11 @@ void writeStringToEEPROM(int addrOffset, const String &strToWrite){
 }
 
 ```
-</p>
-</details>
 
 &ensp;[From ServoController.ino](https://github.com/jjliska/capstone/blob/main/ServoController/ServoController.ino)
+
+</p>
+</details>
 
 &ensp;We attempt to stop the robot from seriously damaging itself in the event that the script throws an error. This saves the angular information every several seconds so that, if the program is restarted it will then attempt to rehome to a set location from the stored angular data.
 
