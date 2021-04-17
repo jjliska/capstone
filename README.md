@@ -41,11 +41,32 @@
 &ensp;[ML Facial Data to Movement](#ML-Facial-Data-to-Movement)  
 &ensp;[Smoothing Algorithm](#Smoothing-Algorithm)  
 &ensp;[Hardware](#Hardware)  
+&ensp;[Other Explanations](#Other)  
 
 ### End Effector
 ![alt text](https://github.com/jjliska/capstone/blob/main/Media/Explanations/EndEffector.png)
 
 &ensp;Inverse kinematics works via the premise that you know the base is 0,0 and the end effector is at some given point (x,y). Every shape can be then broken into triangles which have a given total angle. You can then determine this angle using the law of tangents and law of cosines. These allow you to determine the angle given arm lengths and positinal data. For example our arm is four degrees of freedom, three in the X and Y plane and one in the Z plane. We use two of the degrees of freedom to extend and retract the arm and a third to stabalize the "hand" and LCD attatched to it. The fourth degree of freedom is used for Z rotation which is a simple sin and cos to determine where the point is in a 3d space.
+''' Python 
+def lawOfCosines(a,b,c):
+  return np.arccos((a**2+b**2-c**2) / (2.0*a*b))
+
+def distance(x1,y1,x2,y2):
+  return np.sqrt((x1-x2)**2+((y1-y2)**2))
+
+def distanceMidArm(angle):
+  opp = np.cos(angle) * arm1
+  adj = np.sin(angle) * arm1
+  return opp, adj
+
+def angles(x,y):
+  dist = distance(x,y,0,0)
+  D1 = np.arctan2(y,x)
+  D2 = lawOfCosines(dist,arm1,arm2)
+  A1 = D1 + D2
+  A2 = lawOfCosines(arm1,arm2,dist)
+  return A1, A2
+'''
 
 ### ML Facial Data to Movement
 ![alt text](https://github.com/jjliska/capstone/blob/main/Media/Explanations/FacialTracking.png)  
@@ -66,6 +87,9 @@
 ![alt text](https://github.com/jjliska/capstone/blob/main/Media/Explanations/Hardware.png)  
 
 &ensp;We use a python script running on a laptop that draws information from a generic USB webcamera. The USB webcam passes visual information into a machine learning script that then creates a generic rectangle over the given persons face given the size and position of the face. This information is then stored and used by the script to effect the end effector. We do this to stabilize the LCD so that the interaction on the display is more stable for the user. The python script wworks by creating a vector model from given initial information along with the facial bounding box. This information includes length, mass, torque, and angular hard limits of the system. The system then determines what the maximum amount of force it can put on its joints before its motors will begin to slip. This information is then used in an inverse kinematic model ([stated in the End Effector](#End-Effector) portion of the explenation) of the robotic arm in whcih the end effector is moved inside of a 3D model to determine what the angles between the arms are. The information is then passed from this python script to a Teensy 3.5 in order to utilized pwm and additional vector smoothing.
+
+### Other
+
 
 ## Links
 &ensp;<sup>[Back to Top](#AME-486---Capstone---Reflection)</sup>  
