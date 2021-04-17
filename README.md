@@ -287,6 +287,7 @@ We attempt to stop the robot from seriously damaging itself in the event that th
 
 ## Links
 &ensp;<sup>[Back to Top](#AME-486---Capstone---Reflection)</sup>  
+A collab with some of the basic inverse kinematic models we used is avialable here: [Google Colab](https://colab.research.google.com/drive/112x_Fhu4YKPZFFK7a1mo7FeFkNSDPJKg?usp=sharing)
 
 ## References:
 &ensp;<sup>[Back to Top](#AME-486---Capstone---Reflection)</sup>
