@@ -4,6 +4,8 @@
 &ensp;[Group Members](#Group-Members)  
 &ensp;[Project Description](#Project-Description)  
 &ensp;[Capstone Video](#Capstone-Video)  
+&ensp;[Successes](#Success)  
+&ensp;[Improvements](#Improvements)  
 &ensp;[Demo Videos](#Demo-Videos)  
 &ensp;[Explanations](#Explanations)  
 &ensp;[Links](#Links)  
@@ -21,6 +23,10 @@
 ## Capstone Video
 &ensp;<sup>[Back to Top](#AME-486---Capstone---Reflection)</sup>  
 &ensp;Not currently uploaded.
+
+## Successes
+
+## Improvements
 
 ## Demo Videos
 &ensp;<sup>[Back to Top](#AME-486---Capstone---Reflection)</sup>  
