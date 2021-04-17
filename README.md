@@ -1,12 +1,12 @@
 # AME 486 - Capstone - Reflection
 
 ##### Table of Contents  
-&ensp;[Group Members](#Group-Members)  
-&ensp;[Project Description](#Project-Description)  
-&ensp;[Capstone Video](#Capstone-Video)  
-&ensp;[Demo Videos](#Demo-Videos)  
-&ensp;[Coding Explained](#Coding-Explained)  
-&ensp;[Fusion 360 Models](#Fusion-360-Models)  
+&ensp;[- Group Members](#Group-Members)  
+&ensp;[- Project Description](#Project-Description)  
+&ensp;[- Capstone Video](#Capstone-Video)  
+&ensp;[- Demo Videos](#Demo-Videos)  
+&ensp;[- Coding Explained](#Coding-Explained)  
+&ensp;[- Fusion 360 Models](#Fusion-360-Models)  
 
 ## Project Description
 
