@@ -10,20 +10,20 @@
 &ensp;[References](#References)  
 
 ## Project Description
-&ensp;<sub>[Back to Top](#AME-486---Capstone---Reflection)</sub>
+&ensp;<sub>[Back to Top](#AME-486---Capstone---Reflection)</sub>  
 
 ## Group Members
-&ensp;<sub>[Back to Top](#AME-486---Capstone---Reflection)</sub>
+&ensp;<sub>[Back to Top](#AME-486---Capstone---Reflection)</sub>  
 &ensp;Albert Bang - Unity/Animator  
 &ensp;Ivan Mendoza - Programming/Building  
 &ensp;Jack Carroll - Sound Designer  
 &ensp;[Joshua Liska](https://www.linkedin.com/in/joshua-liska-34a4b77b/) - Programming/Design/Engineering
 
 ## Capstone Video
-&ensp;<sub>[Back to Top](#AME-486---Capstone---Reflection)</sub>
+&ensp;<sub>[Back to Top](#AME-486---Capstone---Reflection)</sub>  
 
 ## Demo Videos
-&ensp;<sub>[Back to Top](#AME-486---Capstone---Reflection)</sub>
+&ensp;<sub>[Back to Top](#AME-486---Capstone---Reflection)</sub>  
 ### Unity Demo
 [![alt text](https://img.youtube.com/vi/sWtO3qcnU5k/0.jpg)](https://www.youtube.com/watch?v=sWtO3qcnU5k)
 ### Tracking Demo
@@ -51,7 +51,7 @@
 &ensp;We use two seperate smoothing algorithm to try and smooth the movement of the arm. The first is run on the python script which uses an acceleration equation to gently accelerate to a top velocity and then once it reaches the bounding box, or facial positioning data is nolonger available, the velocity gently lowers back to zero.
 
 ## Links
-&ensp;<sub>[Back to Top](#AME-486---Capstone---Reflection)</sub>
+&ensp;<sub>[Back to Top](#AME-486---Capstone---Reflection)</sub>  
 
 ## References:
 &ensp;<sub>[Back to Top](#AME-486---Capstone---Reflection)</sub>
