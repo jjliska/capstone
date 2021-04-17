@@ -101,10 +101,11 @@ else:
 #a4 is z rotation
 a4 = np.radians(zRotation)
 ```
-</p>
-</details>
 
 &ensp;[From capstoneV11.py](https://github.com/jjliska/capstone/blob/main/capstoneV11_UNDEBUGGED.py)
+
+</p>
+</details>
 
 ### ML Facial Data to Movement
 ![alt text](https://github.com/jjliska/capstone/blob/main/Media/Explanations/FacialTracking.png)  
@@ -158,10 +159,11 @@ def facePosHandler():
   if not tempX == 0 or not tempY == 0 or not tempRotZ == 0:
     updateVariables(x+tempX,y+tempY,zRotation+tempRotZ)
 ```
-</p>
-</details>
 
 &ensp;[From capstoneV11.py](https://github.com/jjliska/capstone/blob/main/capstoneV11_UNDEBUGGED.py)
+
+</p>
+</details>
 
 ### Smoothing Algorithm
 ![alt text](https://github.com/jjliska/capstone/blob/main/Media/Explanations/SmoothingAlgorythms.png)  
@@ -202,10 +204,11 @@ def velocityHandler(velNum,direction):
       velocity[velNum] += accelVal
   return velocity[velNum]
 ```
-</p>
-</details>
 
 &ensp;[From capstoneV11.py](https://github.com/jjliska/capstone/blob/main/capstoneV11_UNDEBUGGED.py)
+
+</p>
+</details>
 
 &ensp;The second smoothing algorithm is important for several reasons. One is that the python program is not running over ever microsecond to gently smooth the servos angular position to the desired position. Thus we need to feed data for a microcontroller and smooth on that microcontroller. Servos do not have a set speed so instead we can use writeMicroseconds() to get much finer angular translation. We can then take inputs from the python every ~10 milliseconds and smooth it over that given amount of time, recalculation where the angle needs to be at to gently smooth the arm between a given input(a[num]) and the current angle(cura[num]). Typically a servo would instead move to the desired position it was fed(a[num]) as fast as it could while ours attempts to smooth it linerally to closer fit the acceleration model in the python.
 
@@ -253,10 +256,11 @@ float moveToAngle(float input, float currentAngle, Servo servoName){
   }
 }
 ```
-</p>
-</details>
 
 &ensp;[From ServoController.ino](https://github.com/jjliska/capstone/blob/main/ServoController/ServoController.ino)
+
+</p>
+</details>
 
 ### Hardware
 ![alt text](https://github.com/jjliska/capstone/blob/main/Media/Explanations/Hardware.png)  
@@ -293,10 +297,11 @@ void writeStringToEEPROM(int addrOffset, const String &strToWrite){
 }
 
 ```
-</p>
-</details>
 
 &ensp;[From ServoController.ino](https://github.com/jjliska/capstone/blob/main/ServoController/ServoController.ino)
+
+</p>
+</details>
 
 &ensp;We attempt to stop the robot from seriously damaging itself in the event that the script throws an error. This saves the angular information every several seconds so that, if the program is restarted it will then attempt to rehome to a set location from the stored angular data.
 
