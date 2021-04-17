@@ -3,9 +3,9 @@
 ##### Table of Contents  
 &ensp;[Group Members](#Group-Members)  
 &ensp;[Project Description](#Project-Description)  
-&ensp;[Capstone Video](#Capstone-Video)
-&ensp;[Demo Videos](#Demo-Videos)
-&ensp;[Coding Explained](#Coding-Explained)
+&ensp;[Capstone Video](#Capstone-Video)  
+&ensp;[Demo Videos](#Demo-Videos)  
+&ensp;[Coding Explained](#Coding-Explained)  
 &ensp;[Links](#Links)  
 &ensp;[References](#References)  
 
