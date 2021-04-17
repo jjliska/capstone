@@ -83,7 +83,7 @@ else:
 a4 = np.radians(zRotation)
 ```
 </p>
-</summary>
+</details>
 
 &ensp;[From capstoneV11.py](https://github.com/jjliska/capstone/blob/main/capstoneV11_UNDEBUGGED.py)
 
@@ -140,7 +140,7 @@ def facePosHandler():
     updateVariables(x+tempX,y+tempY,zRotation+tempRotZ)
 ```
 </p>
-</summary>
+</details>
 
 &ensp;[From capstoneV11.py](https://github.com/jjliska/capstone/blob/main/capstoneV11_UNDEBUGGED.py)
 
@@ -184,7 +184,7 @@ def velocityHandler(velNum,direction):
   return velocity[velNum]
 ```
 </p>
-</summary>
+</details>
 
 &ensp;[From capstoneV11.py](https://github.com/jjliska/capstone/blob/main/capstoneV11_UNDEBUGGED.py)
 
@@ -235,7 +235,7 @@ float moveToAngle(float input, float currentAngle, Servo servoName){
 }
 ```
 </p>
-</summary>
+</details>
 
 &ensp;[From ServoController.ino](https://github.com/jjliska/capstone/blob/main/ServoController/ServoController.ino)
 
@@ -256,7 +256,7 @@ if(millis()-eepromTimer >= eepromDelay){
 }
 ```
 </p>
-</summary>
+</details>
 
 &ensp;[From ServoController.ino](https://github.com/jjliska/capstone/blob/main/ServoController/ServoController.ino)
 
