@@ -84,6 +84,7 @@ a4 = np.radians(zRotation)
 ```
 </p>
 </details>
+
 &ensp;[From capstoneV11.py](https://github.com/jjliska/capstone/blob/main/capstoneV11_UNDEBUGGED.py)
 
 &ensp;In order to maintain safety in the system we also have a series of checks for both maximum angular checks and if the end effector is within the given torque range that it is allowed. We determine this via the simple equation of (T = F x L). We then take off a margin of this in order to make sure the system can handle the weight upon itself. This assists in both being more stable, as it will not bounce as much as the torque from the motors can greatly compensate for the amount of play in the system given the weight, and allows us to more easily move more quickly as we do not have to overcome more weight.
@@ -177,6 +178,7 @@ def positionHandlerY(x,y):
 ```
 </p>
 </details>
+
 [From capstoneV11.py](https://github.com/jjliska/capstone/blob/main/capstoneV11_UNDEBUGGED.py)
 
 ### ML Facial Data to Movement
@@ -233,6 +235,7 @@ def facePosHandler():
 ```
 </p>
 </details>
+
 &ensp;[From capstoneV11.py](https://github.com/jjliska/capstone/blob/main/capstoneV11_UNDEBUGGED.py)
 
 
@@ -277,6 +280,7 @@ def velocityHandler(velNum,direction):
 ```
 </p>
 </details>
+
 &ensp;[From capstoneV11.py](https://github.com/jjliska/capstone/blob/main/capstoneV11_UNDEBUGGED.py)
 
 
@@ -327,6 +331,7 @@ float moveToAngle(float input, float currentAngle, Servo servoName){
 ```
 </p>
 </details>
+
 &ensp;[From ServoController.ino](https://github.com/jjliska/capstone/blob/main/ServoController/ServoController.ino)
 
 ### Hardware
@@ -345,9 +350,28 @@ float moveToAngle(float input, float currentAngle, Servo servoName){
 if(millis()-eepromTimer >= eepromDelay){
   writeStringToEEPROM(0, eepString);
 }
+
+String readStringFromEEPROM(int addrOffset){
+  int newStrLen = EEPROM.read(addrOffset);
+  char data[newStrLen + 1];
+  for (int i = 0; i < newStrLen; i++){
+    data[i] = EEPROM.read(addrOffset + 1 + i);
+  }
+  data[newStrLen] = '\0';
+  return String(data);
+}
+
+void writeStringToEEPROM(int addrOffset, const String &strToWrite){
+  byte len = strToWrite.length();
+  EEPROM.write(addrOffset, len);
+  for (int i = 0; i < len; i++){
+    EEPROM.write(addrOffset + 1 + i, strToWrite[i]);
+  }
+}
 ```
 </p>
 </details>
+
 &ensp;[From ServoController.ino](https://github.com/jjliska/capstone/blob/main/ServoController/ServoController.ino)  
   
 We attempt to stop the robot from seriously damaging itself in the event that the script throws an error. This saves the angular information every several seconds so that, if the program is restarted it will then attempt to rehome to a set location from the stored angular data.
