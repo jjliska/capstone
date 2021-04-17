@@ -19,7 +19,13 @@
 ## Capstone Video
 
 ## Demo Videos
-### Alpha Video
+### Unity Demo
+[![alt text](https://img.youtube.com/vi/sWtO3qcnU5k/0.jpg)](https://www.youtube.com/watch?v=sWtO3qcnU5k)
+### Tracking Demo
+[![alt text](https://img.youtube.com/vi/6vG7myi-orQ/0.jpg)](https://www.youtube.com/watch?v=6vG7myi-orQ)
+### Smoothing Demo
+[![alt text](https://img.youtube.com/vi/c3GQ3jPTU7w/0.jpg)](https://www.youtube.com/watch?v=c3GQ3jPTU7w)
+### Alpha Demo
 [![alt text](https://img.youtube.com/vi/l52GL87oeng/0.jpg)](https://www.youtube.com/watch?v=l52GL87oeng)
 
 ## Coding Explained
