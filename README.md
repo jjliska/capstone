@@ -47,7 +47,7 @@
 ![alt text](https://github.com/jjliska/capstone/blob/main/Media/Explanations/EndEffector.png)
 
 &ensp;Inverse kinematics works via the premise that you know the base is 0,0 and the end effector is at some given point (x,y). Every shape can be then broken into triangles which have a given total angle. You can then determine this angle using the law of tangents and law of cosines. These allow you to determine the angle given arm lengths and positinal data. For example our arm is four degrees of freedom, three in the X and Y plane and one in the Z plane. We use two of the degrees of freedom to extend and retract the arm and a third to stabalize the "hand" and LCD attatched to it. The fourth degree of freedom is used for Z rotation which is a simple sin and cos to determine where the point is in a 3d space.
-''' Python 
+```python
 def lawOfCosines(a,b,c):
   return np.arccos((a**2+b**2-c**2) / (2.0*a*b))
 
@@ -66,7 +66,7 @@ def angles(x,y):
   A1 = D1 + D2
   A2 = lawOfCosines(arm1,arm2,dist)
   return A1, A2
-'''
+```
 
 ### ML Facial Data to Movement
 ![alt text](https://github.com/jjliska/capstone/blob/main/Media/Explanations/FacialTracking.png)  
