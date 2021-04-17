@@ -46,7 +46,7 @@
 ### End Effector
 ![alt text](https://github.com/jjliska/capstone/blob/main/Media/EndEffector.png)
 
-&ensp;Inverse kinematics works via the premise that you know the base is 0,0 and the end effector is at some given point (x,y). If you push the x,y to a specific axis you can then move the arms by invoking arctan and arccos, which get a theta given arm length or a given point will determine the angle. Since the end effector is at the knuckle between the second and third arm there is no need to invoke inverse kinematics again, as the third arm needs to be parallel to the floor to give the viewer the most viewable experience.
+&ensp;Inverse kinematics works via the premise that you know the base is 0,0 and the end effector is at some given point (x,y). If you push the x,y to a specific axis you can then move the arms by invoking arctan and arccos, which get a theta given arm length or a given point to determine the angle. Since the end effector is at the knuckle between the second and third arm there is no need to invoke inverse kinematics again, as the third arm needs to be parallel to the floor to give the viewer the most viewable experience.
 ### ML Facial Data to Movement
 ![alt text](https://github.com/jjliska/capstone/blob/main/Media/FacialTracking.png)  
 
