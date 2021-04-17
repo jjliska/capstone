@@ -20,10 +20,10 @@
 ![alt text](https://github.com/jjliska/capstone/blob/main/Media/SmoothingAlgorythms.png)  
 
 ## Group Members
-Albert Bang - Unity/Animator  
-Ivan Mendoza - Programming/Building  
-Jack Carroll - Sound Designer  
-[Joshua Liska](https://www.linkedin.com/in/joshua-liska-34a4b77b/) - Programming/Design/Engineering
+### Albert Bang - Unity/Animator  
+### Ivan Mendoza - Programming/Building  
+### Jack Carroll - Sound Designer  
+### [Joshua Liska](https://www.linkedin.com/in/joshua-liska-34a4b77b/) - Programming/Design/Engineering
 
 ## Fusion 360 Models
 ![alt text](https://github.com/jjliska/capstone/blob/main/Media/Reflections2v63.png)
