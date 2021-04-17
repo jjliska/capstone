@@ -1,4 +1,4 @@
-# AME 486 - Capstone - Reflection
+# AME 486 - Capstone - Reflection  
 
 #### Table of Contents  
 &ensp;[Group Members](#Group-Members)  
@@ -11,22 +11,24 @@
 &ensp;[Links](#Links)  
 &ensp;[References](#References)  
 
-## Project Description
+## Project Description  
 
-## Group Members
+## Group Members  
 &ensp;<sup>[Back to Top](#AME-486---Capstone---Reflection)</sup>  
 &ensp;Albert Bang - Unity/Animator  
 &ensp;Ivan Mendoza - Programming/Building  
 &ensp;Jack Carroll - Sound Designer  
 &ensp;[Joshua Liska](https://www.linkedin.com/in/joshua-liska-34a4b77b/) - Programming/Design/Engineering
 
-## Capstone Video
+## Capstone Video  
 &ensp;<sup>[Back to Top](#AME-486---Capstone---Reflection)</sup>  
 &ensp;Not currently uploaded.
 
-## Successes
+## Successes  
+&ensp;<sup>[Back to Top](#AME-486---Capstone---Reflection)</sup>  
 
-## Improvements
+## Improvements  
+&ensp;<sup>[Back to Top](#AME-486---Capstone---Reflection)</sup>  
 
 ## Demo Videos
 &ensp;<sup>[Back to Top](#AME-486---Capstone---Reflection)</sup>  
