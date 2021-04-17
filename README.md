@@ -19,6 +19,8 @@
 ## Capstone Video
 
 ## Demo Videos
+### Alpha Video
+[![alt text](https://img.youtube.com/vi/l52GL87oeng/0.jpg)](https://www.youtube.com/watch?v=l52GL87oeng)
 
 ## Coding Explained
 ##### Quick Links to Coding Explained
