@@ -296,7 +296,7 @@ void writeStringToEEPROM(int addrOffset, const String &strToWrite){
 &ensp;- A link to all of the 3D printed parts we designed and printed: [3D Prints](https://github.com/jjliska/capstone/tree/main/3D-Prints)  
 &ensp;- The Fusion 360 Model created: [Fusion 360](https://a360.co/3mX6sYx) &ensp;&ensp; *Note it is a large file so it will take a while to render in desktop*
 
-## References:
+## References
 &ensp;<sup>[Back to Top](#AME-486---Capstone---Reflection)</sup>
 #### &ensp;[Ender 3 Cable Chain](https://www.thingiverse.com/thing:2920060)
 #### &ensp;[Emotion Model](https://drive.google.com/file/d/1192YC8mYKaCbCoACP8hTfr9PCMC2iN30/view?usp=sharing) from [jaydeepthik](https://github.com/jaydeepthik)
