@@ -91,11 +91,6 @@ a4 = np.radians(zRotation)
 &ensp;Vertical movement in the camera translates to vertical of the arm.  
 &ensp;Horizontal movement in the cameras plane translates to rotational movement of the base, a4.  
 &ensp;The bounding size of the facial data translates to depth of the arm.  
-
-### Smoothing Algorithm
-![alt text](https://github.com/jjliska/capstone/blob/main/Media/Explanations/SmoothingAlgorythms.png)  
-
-&ensp;We use two seperate smoothing algorithm to try and smooth the movement of the arm. The first is run on the python script which uses an acceleration equation to gently accelerate to a top velocity and then once it reaches the bounding box, or facial positioning data is nolonger available, the velocity gently lowers back to zero. This allows the program to create a gentle start and stop for the end effector in which the first several steps will be slow and gently bring the arm up to full speed and then gently lower it back to speed to attempt to lessen damping and "bouncing" on the system. This allows us to achieve much faster speeds without sacrificing the percision of the facial tracking algorithm. Although this is a trade off, if it is too smooth it will not be fast enough, and if it is too fast it will not be smooth enough and begin overshooting and having to compensate.    
 ```python
 def facePosHandler():
   # x axis of camera is z axis of robot
@@ -136,7 +131,12 @@ def facePosHandler():
 
   if not tempX == 0 or not tempY == 0 or not tempRotZ == 0:
     updateVariables(x+tempX,y+tempY,zRotation+tempRotZ)
+```
+### Smoothing Algorithm
+![alt text](https://github.com/jjliska/capstone/blob/main/Media/Explanations/SmoothingAlgorythms.png)  
 
+&ensp;We use two seperate smoothing algorithm to try and smooth the movement of the arm. The first is run on the python script which uses an acceleration equation to gently accelerate to a top velocity and then once it reaches the bounding box, or facial positioning data is nolonger available, the velocity gently lowers back to zero. This allows the program to create a gentle start and stop for the end effector in which the first several steps will be slow and gently bring the arm up to full speed and then gently lower it back to speed to attempt to lessen damping and "bouncing" on the system. This allows us to achieve much faster speeds without sacrificing the percision of the facial tracking algorithm. Although this is a trade off, if it is too smooth it will not be fast enough, and if it is too fast it will not be smooth enough and begin overshooting and having to compensate.    
+```python
 smoothingValue = 10
 maxVelocity = 0.49
 rotationAdjustment = 2.0
