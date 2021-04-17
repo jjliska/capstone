@@ -56,6 +56,8 @@ def lawOfCosines(a,b,c):
 def distance(x1,y1,x2,y2):
   return np.sqrt((x1-x2)**2+((y1-y2)**2))
 
+...
+
 def angles(x,y):
   dist = distance(x,y,0,0)
   D1 = np.arctan2(y,x)
@@ -64,7 +66,7 @@ def angles(x,y):
   A2 = lawOfCosines(arm1,arm2,dist)
   return A1, A2
   
-  ...
+...
   
 a1, a2 = angles(x,y)
 mx, my = distanceMidArm(a1)
