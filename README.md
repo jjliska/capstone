@@ -21,8 +21,16 @@
 ## Demo Videos
 
 ## Coding Explained
+##### Quick Links to Coding Explained
+[Hardware](#Hardware)  
+[ML Facial Data to Movement](#ML-Facial-Data-to-Movement)  
+[Capstone Video](#Smoothing-Algorithm)
+
+## Hardware
 ![alt text](https://github.com/jjliska/capstone/blob/main/Media/Hardware.png)  
+## ML Facial Data to Movement
 ![alt text](https://github.com/jjliska/capstone/blob/main/Media/FacialTracking.png)  
+## Smoothing Algorithm
 ![alt text](https://github.com/jjliska/capstone/blob/main/Media/SmoothingAlgorythms.png)  
 
 ## Fusion 360 Models
