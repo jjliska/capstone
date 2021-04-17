@@ -10,7 +10,7 @@
 &ensp;[References](#References)  
 
 ## Project Description
-&ensp;<sup>[Back to Top](#AME-486---Capstone---Reflection)</sup>  
+
 
 ## Group Members
 &ensp;<sup>[Back to Top](#AME-486---Capstone---Reflection)</sup>  
