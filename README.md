@@ -46,11 +46,9 @@
 ### End Effector
 ![alt text](https://github.com/jjliska/capstone/blob/main/Media/Explanations/EndEffector.png)
 
-&ensp;Inverse kinematics works via the premise that you know the base is 0,0 and the end effector is at some given point (x,y). Every shape can be then broken into triangles which have a given total angle. You can then determine this angle using the law of tangents and law of cosines. These allow you to determine the angle given arm lengths and positinal data. For example our arm is four degrees of freedom, three in the X and Y plane and one in the Z plane. We use two of the degrees of freedom to extend and retract the arm and a third to stabalize the "hand" and LCD attatched to it. The fourth degree of freedom is used for Z rotation which is a simple sin and cos to determine where the point is in a 3d space.
+&ensp;Inverse kinematics works via the premise that you know the base is 0,0 and the end effector is at some given point (x,y). Every shape can be then broken into triangles which have a given total angle. You can then determine this angle using the law of tangents and law of cosines. These allow you to determine the angle given arm lengths and positinal data. For example our arm is four degrees of freedom, three in the X and Y plane and one in the Z plane. We use two of the degrees of freedom to extend and retract the arm and a third to stabalize the "hand" and LCD attatched to it. The fourth degree of freedom is used for Z rotation which is a simple sin and cos to determine where the point is in a 3d space. We do this via: 
 
-<details><summary>Python Script</summary>
-<p>
-  
+&ensp;[From capstoneV11.py](https://github.com/jjliska/capstone/blob/main/capstoneV11_UNDEBUGGED.py)
 ```python
 def lawOfCosines(a,b,c):
   return np.arccos((a**2+b**2-c**2) / (2.0*a*b))
@@ -82,104 +80,6 @@ else:
 #a4 is z rotation
 a4 = np.radians(zRotation)
 ```
-</p>
-</details>
-
-&ensp;[From capstoneV11.py](https://github.com/jjliska/capstone/blob/main/capstoneV11_UNDEBUGGED.py)
-
-&ensp;In order to maintain safety in the system we also have a series of checks for both maximum angular checks and if the end effector is within the given torque range that it is allowed. We determine this via the simple equation of (T = F x L). We then take off a margin of this in order to make sure the system can handle the weight upon itself. This assists in both being more stable, as it will not bounce as much as the torque from the motors can greatly compensate for the amount of play in the system given the weight, and allows us to more easily move more quickly as we do not have to overcome more weight.
-
-<details><summary>Python Script</summary>
-<p>
-
-```python
-arm1 = 32.5
-arm2 = 32.5
-hand = 12.0
-base = 5.0
-screenSize = 17.0
-
-#All masses assume the entirety of the mass is at the end
-#of the point allowing for a larger "buffer" and less torque on the system
-#Units: kg (rough rounded up estimates)
-arm1Mass = .5+.09
-arm2Mass = .5+.09
-handMass = 1
-totMass = arm1Mass + arm2Mass + handMass
-
-#Gear ratio
-gear1 = 45
-gear2 = 30
-gearRatio = gear1/gear2
-
-#Units: kg/cm
-a1Torque = 60*gearRatio
-a2Torque = 25*gearRatio
-a3Torque = 25*gearRatio
-
-#MaxAcceptableAngles
-a1MaxAngle = [0,180]
-#if x is negative the angle must remain [45,90] else [45,180]
-a2MaxAnglePos = [45,180]
-a2MaxAngleNeg = [45,90]
-a3MaxAngle = [0,180]
-a4MaxAngle = [0,270]
-
-...
-
-mLengthA1 = a1Torque/(arm1Mass+arm2Mass+handMass)
-mLengthA2 = a2Torque/(arm2Mass+handMass)
-mLengthA3 = a3Torque/(handMass)
-
-maxXHigh = mLengthA1-base
-maxXLow = 0.0
-
-if ((mLengthA1+base)*(-1)) < (arm1*-1):
-  maxXLow = arm1*-1
-  accXLow = maxXLow
-else:
-  maxXLow = (mLengthA1+base)*(-1)
-  accXLow = acceptableRange(maxXLow)
-
-accXHigh = acceptableRange(maxXHigh)
-
-maxYLowXLow = (screenSize/2.0)+base+2.0
-maxYLowXHigh = (screenSize/2.0)+2.0
-
-...
-
-def angleChecker(array,angle):
-  if angle >= np.radians(array[0]) and angle <= np.radians(array[1]):
-    return True
-  else:
-    return False
-    
-def positionHandlerX(x):
-  if x >= accXLow and x <= accXHigh:
-    return True
-  else:
-    return False
-
-def positionHandlerY(x,y):
-  if x >= accXLow and x <= accXHigh:
-    if x >= 0:
-      if y >= maxYLowXHigh and y <= findYHigh(x,arm1+arm2+base):
-        return True
-      else:
-        return False
-    else:
-      if y >= maxYLowXLow and y <= findYHigh(x,arm1+arm2+base):
-        return True
-      else:
-        return False
-  else:
-    return False
-
-```
-</p>
-</details>
-
-[From capstoneV11.py](https://github.com/jjliska/capstone/blob/main/capstoneV11_UNDEBUGGED.py)
 
 ### ML Facial Data to Movement
 ![alt text](https://github.com/jjliska/capstone/blob/main/Media/Explanations/FacialTracking.png)  
@@ -189,9 +89,7 @@ def positionHandlerY(x,y):
 &ensp;Horizontal movement in the cameras plane translates to rotational movement of the base, a4.  
 &ensp;The bounding size of the facial data translates to depth of the arm.  
 
-<details><summary>Python Script</summary>
-<p>
-  
+&ensp;[From capstoneV11.py](https://github.com/jjliska/capstone/blob/main/capstoneV11_UNDEBUGGED.py)
 ```python
 def facePosHandler():
   # x axis of camera is z axis of robot
@@ -233,20 +131,12 @@ def facePosHandler():
   if not tempX == 0 or not tempY == 0 or not tempRotZ == 0:
     updateVariables(x+tempX,y+tempY,zRotation+tempRotZ)
 ```
-</p>
-</details>
-
-&ensp;[From capstoneV11.py](https://github.com/jjliska/capstone/blob/main/capstoneV11_UNDEBUGGED.py)
-
-
 ### Smoothing Algorithm
 ![alt text](https://github.com/jjliska/capstone/blob/main/Media/Explanations/SmoothingAlgorythms.png)  
 
 &ensp;We use two seperate smoothing algorithm to try and smooth the movement of the arm. The first is run on the python script which uses an acceleration equation to gently accelerate to a top velocity and then once it reaches the bounding box, or facial positioning data is nolonger available, the velocity gently lowers back to zero. This allows the program to create a gentle start and stop for the end effector in which the first several steps will be slow and gently bring the arm up to full speed and then gently lower it back to speed to attempt to lessen damping and "bouncing" on the system. This allows us to achieve much faster speeds without sacrificing the percision of the facial tracking algorithm. Although this is a trade off, if it is too smooth it will not be fast enough, and if it is too fast it will not be smooth enough and begin overshooting and having to compensate.    
 
-<details><summary>Python Script</summary>
-<p>
-  
+&ensp;[From capstoneV11.py](https://github.com/jjliska/capstone/blob/main/capstoneV11_UNDEBUGGED.py)
 ```python
 smoothingValue = 10
 maxVelocity = 0.49
@@ -278,17 +168,9 @@ def velocityHandler(velNum,direction):
       velocity[velNum] += accelVal
   return velocity[velNum]
 ```
-</p>
-</details>
-
-&ensp;[From capstoneV11.py](https://github.com/jjliska/capstone/blob/main/capstoneV11_UNDEBUGGED.py)
-
-
 &ensp;The second smoothing algorithm is important for several reasons. One is that the python program is not running over ever microsecond to gently smooth the servos angular position to the desired position. Thus we need to feed data for a microcontroller and smooth on that microcontroller. Servos do not have a set speed so instead we can use writeMicroseconds() to get much finer angular translation. We can then take inputs from the python every ~10 milliseconds and smooth it over that given amount of time, recalculation where the angle needs to be at to gently smooth the arm between a given input(a[num]) and the current angle(cura[num]). Typically a servo would instead move to the desired position it was fed(a[num]) as fast as it could while ours attempts to smooth it linerally to closer fit the acceleration model in the python.
 
-<details><summary>C/C++ Script</summary>
-<p>
-
+&ensp;[From ServoController.ino](https://github.com/jjliska/capstone/blob/main/ServoController/ServoController.ino)
 ```c
 const int delayTime = 100;
 
@@ -329,10 +211,6 @@ float moveToAngle(float input, float currentAngle, Servo servoName){
   }
 }
 ```
-</p>
-</details>
-
-&ensp;[From ServoController.ino](https://github.com/jjliska/capstone/blob/main/ServoController/ServoController.ino)
 
 ### Hardware
 ![alt text](https://github.com/jjliska/capstone/blob/main/Media/Explanations/Hardware.png)  
@@ -341,41 +219,13 @@ float moveToAngle(float input, float currentAngle, Servo servoName){
 
 ### Other
 * Angular Memory in the event of a Crash
-&ensp; 
-
-<details><summary>C/C++ Script</summary>
-<p>
-  
 ```c
 if(millis()-eepromTimer >= eepromDelay){
   writeStringToEEPROM(0, eepString);
 }
-
-String readStringFromEEPROM(int addrOffset){
-  int newStrLen = EEPROM.read(addrOffset);
-  char data[newStrLen + 1];
-  for (int i = 0; i < newStrLen; i++){
-    data[i] = EEPROM.read(addrOffset + 1 + i);
-  }
-  data[newStrLen] = '\0';
-  return String(data);
-}
-
-void writeStringToEEPROM(int addrOffset, const String &strToWrite){
-  byte len = strToWrite.length();
-  EEPROM.write(addrOffset, len);
-  for (int i = 0; i < len; i++){
-    EEPROM.write(addrOffset + 1 + i, strToWrite[i]);
-  }
-}
 ```
-</p>
-</details>
-
-&ensp;[From ServoController.ino](https://github.com/jjliska/capstone/blob/main/ServoController/ServoController.ino)  
-  
 We attempt to stop the robot from seriously damaging itself in the event that the script throws an error. This saves the angular information every several seconds so that, if the program is restarted it will then attempt to rehome to a set location from the stored angular data.
-*
+* 
 *
 *
 *
@@ -389,4 +239,4 @@ We attempt to stop the robot from seriously damaging itself in the event that th
 #### &ensp;[Emotion Model](https://drive.google.com/file/d/1192YC8mYKaCbCoACP8hTfr9PCMC2iN30/view?usp=sharing) from [jaydeepthik](https://github.com/jaydeepthik)
 #### &ensp;[Face Detection](https://realpython.com/face-detection-in-python-using-a-webcam/)
 #### &ensp;[Two-way communication between Python 3 and Unity (C#) - Y. T. Elashry](https://github.com/Siliconifier/Python-Unity-Socket-Communication.git)
-#### &ensp;[EEPROM writing on teensy](https://www.pjrc.com/teensy/td_libs_EEPROM.html)
+#### &ensp;[Writing to EEPROM](https://roboticsbackend.com/arduino-write-string-in-eeprom/)
