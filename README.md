@@ -1,7 +1,7 @@
 # AME 486 - Capstone - Reflection
 
 ## Group Members
-Albert Bang - Visual Artist/Unity3D Modeling  
+Albert Bang - Unity/Animator  
 Ivan Mendoza - Programming/Building  
 Jack Carroll - Sound Designer  
 [Joshua Liska](https://www.linkedin.com/in/joshua-liska-34a4b77b/) - Programming/Design/Engineering
