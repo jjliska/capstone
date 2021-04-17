@@ -11,7 +11,6 @@
 
 ## Project Description
 
-
 ## Group Members
 &ensp;<sup>[Back to Top](#AME-486---Capstone---Reflection)</sup>  
 &ensp;Albert Bang - Unity/Animator  
