@@ -1,20 +1,20 @@
 # AME 486 - Capstone - Reflection
 
 ##### Table of Contents  
-   [Group Members](#Group-Members)  
-   [Project Description](#Project-Description)  
-   [Capstone Video](#Capstone-Video)
-   [Demo Videos](#Demo-Videos)
-   [Coding Explained](#Coding-Explained)
-   [Fusion 360 Models](#Fusion-360-Models)  
+&ensp;[Group Members](#Group-Members)  
+&ensp;[Project Description](#Project-Description)  
+&ensp;[Capstone Video](#Capstone-Video)
+&ensp;[Demo Videos](#Demo-Videos)
+&ensp;[Coding Explained](#Coding-Explained)
+&ensp;[Fusion 360 Models](#Fusion-360-Models)  
 
 ## Project Description
 
 ## Group Members
-   ### Albert Bang - Unity/Animator  
-   ### Ivan Mendoza - Programming/Building  
-   ### Jack Carroll - Sound Designer  
-   ### [Joshua Liska](https://www.linkedin.com/in/joshua-liska-34a4b77b/) - Programming/Design/Engineering
+&ensp;### Albert Bang - Unity/Animator  
+&ensp;### Ivan Mendoza - Programming/Building  
+&ensp;### Jack Carroll - Sound Designer  
+&ensp;### [Joshua Liska](https://www.linkedin.com/in/joshua-liska-34a4b77b/) - Programming/Design/Engineering
 
 ## Capstone Video
 
