@@ -169,6 +169,36 @@ def velocityHandler(velNum,direction):
 ```
 &ensp;The second smoothing algorithm is important for several reasons. One is that the python program is not running over ever microsecond to gently smooth the servos angular position to the desired position. Thus we need to feed data for a microcontroller and smooth on that microcontroller. Servos do not have a set speed so instead we can use writeMicroseconds() to get much finer angular translation. We can then take inputs from the python every ~10 milliseconds and smooth it over that given amount of time, recalculation where the angle needs to be at to gently smooth the arm between a given input(a[num]) and the current angle(cura[num]). Typically a servo would instead move to the desired position it was fed(a[num]) as fast as it could while ours attempts to smooth it linerally to closer fit the acceleration model in the python.
 
+[From arduino file](https://github.com/jjliska/capstone/blob/main/ServoController/ServoController.ino)
+```c
+float moveToAngle(float input, float currentAngle, Servo servoName){
+  float retFloat;
+  float difference = abs(input-currentAngle);
+  if(currentAngle > input){
+    if((currentAngle - input) > (difference*smoothingRate)){
+      retFloat = currentAngle-(difference*smoothingRate);
+      writeToServo(servoName,retFloat);
+      return retFloat;
+    }
+    else{
+      writeToServo(servoName,input);
+      return input;
+    }
+  }
+  else if(currentAngle < input){
+    if((currentAngle - input) < (-1*(difference*smoothingRate))){
+      retFloat = currentAngle+(difference*smoothingRate);
+      writeToServo(servoName,retFloat);
+      return retFloat;
+    }
+    else{
+      writeToServo(servoName,input);
+      return input;
+    }
+  }
+}
+```
+
 ### Hardware
 ![alt text](https://github.com/jjliska/capstone/blob/main/Media/Explanations/Hardware.png)  
 
