@@ -31,7 +31,7 @@
 
 ## Coding Explained
 
-&ensp;<sup><sub>[Back to Top](#AME-486---Capstone---Reflection)</sub></sup>
+&ensp;<sub>[Back to Top](#AME-486---Capstone---Reflection)</sub>
 
 ##### Quick Links to Coding Explained
 &ensp;[Hardware](#Hardware)  
