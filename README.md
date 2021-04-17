@@ -36,7 +36,7 @@
 ## Coding Explained
 &ensp;<sup>[Back to Top](#AME-486---Capstone---Reflection)</sup>
 
-##### Quick Links to Coding Explained
+##### Quick Links for Coding Explained
 &ensp;[Hardware](#Hardware)  
 &ensp;[ML Facial Data to Movement](#ML-Facial-Data-to-Movement)  
 &ensp;[Capstone Video](#Smoothing-Algorithm)
