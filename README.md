@@ -96,7 +96,79 @@ a4 = np.radians(zRotation)
 ![alt text](https://github.com/jjliska/capstone/blob/main/Media/Explanations/SmoothingAlgorythms.png)  
 
 &ensp;We use two seperate smoothing algorithm to try and smooth the movement of the arm. The first is run on the python script which uses an acceleration equation to gently accelerate to a top velocity and then once it reaches the bounding box, or facial positioning data is nolonger available, the velocity gently lowers back to zero. This allows the program to create a gentle start and stop for the end effector in which the first several steps will be slow and gently bring the arm up to full speed and then gently lower it back to speed to attempt to lessen damping and "bouncing" on the system. This allows us to achieve much faster speeds without sacrificing the percision of the facial tracking algorithm. Although this is a trade off, if it is too smooth it will not be fast enough, and if it is too fast it will not be smooth enough and begin overshooting and having to compensate.    
-  
+```python
+def facePosHandler():
+  # x axis of camera is z axis of robot
+  # y axis of cameria is y axis of robot
+  # size of facial bounding box is the x axis of robot
+
+  if noFaceDetected < noFaceTime:
+    z1C, y1C = getCenterBox()
+    x1C = facePos[2]
+    tempX,tempY,tempRotZ = 0,0,0
+    # Z rotation
+    if z1C >= boundsRight:
+      tempRotZ = velocityHandler(2,-1)
+    elif z1C <= boundsLeft:
+      tempRotZ = velocityHandler(2,1)
+    else:
+      tempRotZ = velocityHandler(2,0)
+
+    # Y movement
+    if y1C >= boundsTop:
+      tempY = velocityHandler(1,1)
+    elif y1C <= boundsBottom:
+      tempY = velocityHandler(1,-1)
+    else:
+      tempY = velocityHandler(1,0)
+
+    # X movement
+    if x1C >= boundsNear:
+      tempX = velocityHandler(0,-1)
+    elif x1C <= boundsFar:
+      tempX = velocityHandler(0,1)
+    else:
+      tempX = velocityHandler(0,0)
+  else:
+    tempX = velocityHandler(0,0)
+    tempY = velocityHandler(1,0)
+    tempRotZ = velocityHandler(2,0)
+
+  if not tempX == 0 or not tempY == 0 or not tempRotZ == 0:
+    updateVariables(x+tempX,y+tempY,zRotation+tempRotZ)
+
+# 10,.5,2.0 looks amazing its almost where i want it in terms of smoothness
+# 10,.49,2.0 is that good good
+smoothingValue = 10
+maxVelocity = 0.49
+rotationAdjustment = 2.0
+velocity = [0.0,0.0,0.0]
+
+# Handles acceleration and velocity to create a smooth start and stop
+def velocityHandler(velNum,direction):
+  global velocity
+  if velNum == 2:
+    accelVal = maxVelocity/smoothingValue
+    maxVelocityAdjusted = rotationAdjustment*maxVelocity
+  else:
+    accelVal = maxVelocity/smoothingValue
+    maxVelocityAdjusted = maxVelocity
+  # No face detected or the face is in the bounds deaccelerate
+  if noFaceDetected > noFaceTime or direction == 0:
+    if velocity[velNum] >= -1*accelVal and velocity[velNum] <= accelVal:
+      velocity[velNum] = 0
+    elif velocity[velNum] > 0:
+      velocity[velNum] -= accelVal
+    elif velocity[velNum] < 0:
+      velocity[velNum] += accelVal
+  # Increases acceleration to create and easing effect on the servos so they do not immediately start jumping to large degree of angle changes
+  else:
+    if direction == -1 and velocity[velNum] > -1*maxVelocityAdjusted:
+      velocity[velNum] -= accelVal
+    elif direction == 1 and velocity[velNum] < maxVelocityAdjusted:
+      velocity[velNum] += accelVal
+  return velocity[velNum]
+```
 &ensp;The second smoothing algorithm is important for several reasons. One is that the python program is not running over ever microsecond to gently smooth the servos angular position to the desired position. Thus we need to feed data for a microcontroller and smooth on that microcontroller. Servos do not have a set speed so instead we can use writeMicroseconds() to get much finer angular translation. We can then take inputs from the python every ~10 milliseconds and smooth it over that given amount of time, recalculation where the angle needs to be at to gently smooth the arm between a given input(a[num]) and the current angle(cura[num]). Typically a servo would instead move to the desired position it was fed(a[num]) as fast as it could while ours attempts to smooth it linerally to closer fit the acceleration model in the python.
 
 ### Hardware
