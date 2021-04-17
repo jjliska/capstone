@@ -2,11 +2,22 @@
 
 ##### Table of Contents  
 [Group Members](#Group-Members)  
-[Project Description](#Project-Description)
+[Project Description](#Project-Description)  
+[Capstone Video](#Capstone-Video)
+[Demo Videos](#Demo-Videos)
+[Coding Explained](#Coding-Explained)
 [Fusion 360 Models](#Fusion-360-Models)  
 
 ## Project Description
 
+## Capstone Video
+
+## Demo Videos
+
+## Coding Explained
+![alt text](https://github.com/jjliska/capstone/blob/main/Media/Hardware.png)  
+![alt text](https://github.com/jjliska/capstone/blob/main/Media/FacialTracking.png)  
+![alt text](https://github.com/jjliska/capstone/blob/main/Media/SmoothingAlgorythms.png)  
 
 ## Group Members
 Albert Bang - Unity/Animator  
