@@ -7,6 +7,7 @@
 &ensp;[Demo Videos](#Demo-Videos)
 &ensp;[Coding Explained](#Coding-Explained)
 &ensp;[Links](#Links)  
+&ensp;[References](#References)  
 
 ## Project Description
 
