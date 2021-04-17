@@ -295,7 +295,7 @@ def updateVariables(tempX,tempY,tempZRot):
 
 def toSocket():
   centerFaceX, centerFaceY = getCenterBox()
-  socketString = str(centerFaceX)+","+str(centerFaceY)+","+str(a4)+","+facialEmotion
+  socketString = str(centerFaceX)+","+str(centerFaceY)+","+str(np.degrees(a4))+","+facialEmotion
   sock.SendData(socketString)
 
 def toSerial():
