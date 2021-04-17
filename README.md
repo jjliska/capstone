@@ -1,6 +1,6 @@
 # AME 486 - Capstone - Reflection
 
-##### Table of Contents  
+#### Table of Contents  
 &ensp;[Group Members](#Group-Members)  
 &ensp;[Project Description](#Project-Description)  
 &ensp;[Capstone Video](#Capstone-Video)  
@@ -36,7 +36,7 @@
 ## Explanations
 &ensp;<sup>[Back to Top](#AME-486---Capstone---Reflection)</sup>
 
-##### Quick Links for Explanations
+#### Quick Links for Explanations
 &ensp;[End Effector](#End-Effector)  
 &ensp;[ML Facial Data to Movement](#ML-Facial-Data-to-Movement)  
 &ensp;[Smoothing Algorithm](#Smoothing-Algorithm)  
