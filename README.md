@@ -11,10 +11,10 @@
 ## Project Description
 
 ## Group Members
-&ensp;- Albert Bang - Unity/Animator  
-&ensp;- Ivan Mendoza - Programming/Building  
-&ensp;- Jack Carroll - Sound Designer  
-&ensp;- [Joshua Liska](https://www.linkedin.com/in/joshua-liska-34a4b77b/) - Programming/Design/Engineering
+&ensp;Albert Bang - Unity/Animator  
+&ensp;Ivan Mendoza - Programming/Building  
+&ensp;Jack Carroll - Sound Designer  
+&ensp;[Joshua Liska](https://www.linkedin.com/in/joshua-liska-34a4b77b/) - Programming/Design/Engineering
 
 ## Capstone Video
 
