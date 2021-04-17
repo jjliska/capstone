@@ -30,9 +30,9 @@
 
 ## Coding Explained
 ##### Quick Links to Coding Explained
-&ensp;[Hardware](##Hardware)  
-&ensp;[ML Facial Data to Movement](##ML-Facial-Data-to-Movement)  
-&ensp;[Capstone Video](##Smoothing-Algorithm)
+&ensp;[Hardware](#Hardware)  
+&ensp;[ML Facial Data to Movement](#ML-Facial-Data-to-Movement)  
+&ensp;[Capstone Video](#Smoothing-Algorithm)
 
 ### Hardware
 ![alt text](https://github.com/jjliska/capstone/blob/main/Media/Hardware.png)  
