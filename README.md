@@ -21,6 +21,7 @@
 
 ## Capstone Video
 &ensp;<sup>[Back to Top](#AME-486---Capstone---Reflection)</sup>  
+Not currently uploaded.
 
 ## Demo Videos
 &ensp;<sup>[Back to Top](#AME-486---Capstone---Reflection)</sup>  
