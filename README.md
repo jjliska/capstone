@@ -47,6 +47,8 @@
 ![alt text](https://github.com/jjliska/capstone/blob/main/Media/Explanations/EndEffector.png)
 
 &ensp;Inverse kinematics works via the premise that you know the base is 0,0 and the end effector is at some given point (x,y). Every shape can be then broken into triangles which have a given total angle. You can then determine this angle using the law of tangents and law of cosines. These allow you to determine the angle given arm lengths and positinal data. For example our arm is four degrees of freedom, three in the X and Y plane and one in the Z plane. We use two of the degrees of freedom to extend and retract the arm and a third to stabalize the "hand" and LCD attatched to it. The fourth degree of freedom is used for Z rotation which is a simple sin and cos to determine where the point is in a 3d space. We do this via: 
+
+&ensp;[From capstoneV11.py](https://github.com/jjliska/capstone/blob/main/capstoneV11_UNDEBUGGED.py)
 ```python
 def lawOfCosines(a,b,c):
   return np.arccos((a**2+b**2-c**2) / (2.0*a*b))
@@ -80,8 +82,6 @@ else:
 
 #a4 is z rotation
 a4 = np.radians(zRotation)
-
-  
 ```
 
 ### ML Facial Data to Movement
@@ -91,6 +91,8 @@ a4 = np.radians(zRotation)
 &ensp;Vertical movement in the camera translates to vertical of the arm.  
 &ensp;Horizontal movement in the cameras plane translates to rotational movement of the base, a4.  
 &ensp;The bounding size of the facial data translates to depth of the arm.  
+
+&ensp;[From capstoneV11.py](https://github.com/jjliska/capstone/blob/main/capstoneV11_UNDEBUGGED.py)
 ```python
 def facePosHandler():
   # x axis of camera is z axis of robot
@@ -136,6 +138,8 @@ def facePosHandler():
 ![alt text](https://github.com/jjliska/capstone/blob/main/Media/Explanations/SmoothingAlgorythms.png)  
 
 &ensp;We use two seperate smoothing algorithm to try and smooth the movement of the arm. The first is run on the python script which uses an acceleration equation to gently accelerate to a top velocity and then once it reaches the bounding box, or facial positioning data is nolonger available, the velocity gently lowers back to zero. This allows the program to create a gentle start and stop for the end effector in which the first several steps will be slow and gently bring the arm up to full speed and then gently lower it back to speed to attempt to lessen damping and "bouncing" on the system. This allows us to achieve much faster speeds without sacrificing the percision of the facial tracking algorithm. Although this is a trade off, if it is too smooth it will not be fast enough, and if it is too fast it will not be smooth enough and begin overshooting and having to compensate.    
+
+&ensp;[From capstoneV11.py](https://github.com/jjliska/capstone/blob/main/capstoneV11_UNDEBUGGED.py)
 ```python
 smoothingValue = 10
 maxVelocity = 0.49
@@ -169,7 +173,7 @@ def velocityHandler(velNum,direction):
 ```
 &ensp;The second smoothing algorithm is important for several reasons. One is that the python program is not running over ever microsecond to gently smooth the servos angular position to the desired position. Thus we need to feed data for a microcontroller and smooth on that microcontroller. Servos do not have a set speed so instead we can use writeMicroseconds() to get much finer angular translation. We can then take inputs from the python every ~10 milliseconds and smooth it over that given amount of time, recalculation where the angle needs to be at to gently smooth the arm between a given input(a[num]) and the current angle(cura[num]). Typically a servo would instead move to the desired position it was fed(a[num]) as fast as it could while ours attempts to smooth it linerally to closer fit the acceleration model in the python.
 
-[From arduino file](https://github.com/jjliska/capstone/blob/main/ServoController/ServoController.ino)
+&ensp;[From ServoController.ino](https://github.com/jjliska/capstone/blob/main/ServoController/ServoController.ino)
 ```c
 float moveToAngle(float input, float currentAngle, Servo servoName){
   float retFloat;
