@@ -1,6 +1,12 @@
 # AME 486 - Capstone - Reflection
 
-## Fusion Models
+## Group Members
+Albert Bang - Visual Artist/Unity3D Modeling
+Ivan Mendoza - Programming/Building
+Jack Carroll - Sound Designer
+[Joshua Liska](https://www.linkedin.com/in/joshua-liska-34a4b77b/) - Programming/Design/Engineering
+
+## Fusion 360 Models
 ![alt text](https://github.com/jjliska/capstone/blob/main/Media/Reflections2v63.png)
 ![alt text](https://github.com/jjliska/capstone/blob/main/Media/Reflections2v63_1.png)
 ![alt text](https://github.com/jjliska/capstone/blob/main/Media/Reflections2v63_2.png)
