@@ -5,7 +5,7 @@
 &ensp;[Project Description](#Project-Description)  
 &ensp;[Capstone Video](#Capstone-Video)  
 &ensp;[Demo Videos](#Demo-Videos)  
-&ensp;[Coding Explained](#Coding-Explained)  
+&ensp;[Explanations](#Explanations)  
 &ensp;[Links](#Links)  
 &ensp;[References](#References)  
 
@@ -33,22 +33,23 @@
 ### Alpha Demo
 [![alt text](https://img.youtube.com/vi/l52GL87oeng/0.jpg)](https://www.youtube.com/watch?v=l52GL87oeng)
 
-## Coding Explained
+## Explanations
 &ensp;<sup>[Back to Top](#AME-486---Capstone---Reflection)</sup>
 
-##### Quick Links for Coding Explained
-&ensp;[Hardware](#Hardware)  
+##### Quick Links for Explanations
 &ensp;[ML Facial Data to Movement](#ML-Facial-Data-to-Movement)  
-&ensp;[Capstone Video](#Smoothing-Algorithm)
+&ensp;[Smoothing Algorithm](#Smoothing-Algorithm)  
+&ensp;[Hardware](#Hardware)  
 
-
-### Hardware
-![alt text](https://github.com/jjliska/capstone/blob/main/Media/Hardware.png)  
 ### ML Facial Data to Movement
 ![alt text](https://github.com/jjliska/capstone/blob/main/Media/FacialTracking.png)  
+&ensp;The machine learning algorithm detects the face and then sends that data to a check that determines where in the cameras vision the face was detected. This data is then enterpolated into a system that determines how much the and how quickly the arm end effector of the arm needs to move to try and center the face in its grid.
 ### Smoothing Algorithm
 ![alt text](https://github.com/jjliska/capstone/blob/main/Media/SmoothingAlgorythms.png)  
 &ensp;We use two seperate smoothing algorithm to try and smooth the movement of the arm. The first is run on the python script which uses an acceleration equation to gently accelerate to a top velocity and then once it reaches the bounding box, or facial positioning data is nolonger available, the velocity gently lowers back to zero.
+### Hardware
+![alt text](https://github.com/jjliska/capstone/blob/main/Media/Hardware.png)  
+#We use a python script running on a laptop that draws information from a generic USB webcamera. The USB webcam passes visual information into a machine learning script that then creates a generic rectangle over the given persons face given the size and position of the face. This information is then stored and used by the script to effect the end effector. We do this to stabilize the LCD so that the interaction on the display is more stable for the user. The python script wworks by creating a vector model from given initial information along with the facial bounding box. This information includes length, mass, torque, and angular hard limits of the system. The system then determines what the maximum amount of force it can put on its joints before its motors will begin to slip. This information is then used in an inverse kinematic model of the robotic arm in whcih the end effector is moved inside of a 3D model to determine what the angles between the arms are. This angular information is then passed to the robots motors to replicate this 3D model. The information is passed from this python script to a Teensy 3.5 in order to utilized pwm and additional vector smoothing.
 
 ## Links
 &ensp;<sup>[Back to Top](#AME-486---Capstone---Reflection)</sup>  
