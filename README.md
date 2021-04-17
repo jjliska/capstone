@@ -137,8 +137,6 @@ def facePosHandler():
   if not tempX == 0 or not tempY == 0 or not tempRotZ == 0:
     updateVariables(x+tempX,y+tempY,zRotation+tempRotZ)
 
-# 10,.5,2.0 looks amazing its almost where i want it in terms of smoothness
-# 10,.49,2.0 is that good good
 smoothingValue = 10
 maxVelocity = 0.49
 rotationAdjustment = 2.0
