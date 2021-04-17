@@ -6,7 +6,6 @@
 &ensp;- [Capstone Video](#Capstone-Video)  
 &ensp;- [Demo Videos](#Demo-Videos)  
 &ensp;- [Coding Explained](#Coding-Explained)  
-&ensp;- [Fusion 360 Models](#Fusion-360-Models)  
 
 ## Project Description
 
@@ -42,11 +41,6 @@
 ### Smoothing Algorithm
 ![alt text](https://github.com/jjliska/capstone/blob/main/Media/SmoothingAlgorythms.png)  
 &ensp;We use two seperate smoothing algorithm to try and smooth the movement of the arm. The first is run on the python script which uses an acceleration equation to gently accelerate to a top velocity and then once it reaches the bounding box, or facial positioning data is nolonger available, the velocity gently lowers back to zero.
-
-## Fusion 360 Models
-![alt text](https://github.com/jjliska/capstone/blob/main/Media/Reflections2v63.png)
-![alt text](https://github.com/jjliska/capstone/blob/main/Media/Reflections2v63_1.png)
-![alt text](https://github.com/jjliska/capstone/blob/main/Media/Reflections2v63_2.png)
 
 ## References:
 #### [Ender 3 Cable Chain](https://www.thingiverse.com/thing:2920060)
