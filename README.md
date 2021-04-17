@@ -2,7 +2,11 @@
 
 ##### Table of Contents  
 [Group Members](#Group-Members)  
+[Project Description](#Project-Description)
 [Fusion 360 Models](#Fusion-360-Models)  
+
+## Project Description
+
 
 ## Group Members
 Albert Bang - Unity/Animator  
