@@ -13,10 +13,10 @@
 
 ## Group Members
 &ensp;<sup>[Back to Top](#AME-486---Capstone---Reflection)</sup>  
-&ensp;Albert Bang - Unity/Animator  
-&ensp;Ivan Mendoza - Programming/Building  
-&ensp;Jack Carroll - Sound Designer  
-&ensp;[Joshua Liska](https://www.linkedin.com/in/joshua-liska-34a4b77b/) - Programming/Design/Engineering
+&ensp;*Albert Bang - Unity/Animator  
+&ensp;*Ivan Mendoza - Programming/Building  
+&ensp;*Jack Carroll - Sound Designer  
+&ensp;*[Joshua Liska](https://www.linkedin.com/in/joshua-liska-34a4b77b/) - Programming/Design/Engineering
 
 ## Capstone Video
 &ensp;<sup>[Back to Top](#AME-486---Capstone---Reflection)</sup>  
@@ -206,7 +206,11 @@ float moveToAngle(float input, float currentAngle, Servo servoName){
 &ensp;We use a python script running on a laptop that draws information from a generic USB webcamera. The USB webcam passes visual information into a machine learning script that then creates a generic rectangle over the given persons face given the size and position of the face. This information is then stored and used by the script to effect the end effector. We do this to stabilize the LCD so that the interaction on the display is more stable for the user. The python script wworks by creating a vector model from given initial information along with the facial bounding box. This information includes length, mass, torque, and angular hard limits of the system. The system then determines what the maximum amount of force it can put on its joints before its motors will begin to slip. This information is then used in an inverse kinematic model ([stated in the End Effector](#End-Effector) portion of the explenation) of the robotic arm in whcih the end effector is moved inside of a 3D model to determine what the angles between the arms are. The information is then passed from this python script to a Teensy 3.5 in order to utilized pwm and additional vector smoothing.
 
 ### Other
-
+*
+*
+*
+*
+*
 
 ## Links
 &ensp;<sup>[Back to Top](#AME-486---Capstone---Reflection)</sup>  
