@@ -34,12 +34,14 @@
 &ensp;[ML Facial Data to Movement](#ML-Facial-Data-to-Movement)  
 &ensp;[Capstone Video](#Smoothing-Algorithm)
 
+
 ### Hardware
 ![alt text](https://github.com/jjliska/capstone/blob/main/Media/Hardware.png)  
 ### ML Facial Data to Movement
 ![alt text](https://github.com/jjliska/capstone/blob/main/Media/FacialTracking.png)  
 ### Smoothing Algorithm
 ![alt text](https://github.com/jjliska/capstone/blob/main/Media/SmoothingAlgorythms.png)  
+&ensp;We use two seperate smoothing algorithm to try and smooth the movement of the arm. The first is run on the python script which uses an acceleration equation to gently accelerate to a top velocity and then once it reaches the bounding box, or facial positioning data is nolonger available, the velocity gently lowers back to zero.
 
 ## Fusion 360 Models
 ![alt text](https://github.com/jjliska/capstone/blob/main/Media/Reflections2v63.png)
