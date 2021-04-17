@@ -51,7 +51,10 @@
 ### ML Facial Data to Movement
 ![alt text](https://github.com/jjliska/capstone/blob/main/Media/Explanations/FacialTracking.png)  
 
-&ensp;The machine learning algorithm detects the face and then sends that data to an algorithm that determines where in the cameras lense the person is. It then determines where it should move to and how quickly given previous movement and the distance from the center of the camera. This then allows the camera to attempt to position itself over the center of the users face. This allows the program to better recognize tthe users emotional state as there is no distortion in the image or partial faces.
+&ensp;The machine learning algorithm detects the face and then sends that data to an algorithm that determines where in the cameras lense the person is. It then determines where it should move to and how quickly given previous movement and the distance from the center of the camera. This then allows the camera to attempt to position itself over the center of the users face. This allows the program to better recognize tthe users emotional state as there is no distortion in the image or partial faces.  
+Vertical movement in the camera translates to vertical of the arm.  
+Horizontal movement in the cameras plane translates to rotational movement of the base, a4.  
+The bounding size of the facial data translates to depth of the arm.  
 
 ### Smoothing Algorithm
 ![alt text](https://github.com/jjliska/capstone/blob/main/Media/Explanations/SmoothingAlgorythms.png)  
