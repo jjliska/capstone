@@ -1,11 +1,12 @@
 # AME 486 - Capstone - Reflection
 
 ##### Table of Contents  
-&ensp;- [Group Members](#Group-Members)  
-&ensp;- [Project Description](#Project-Description)  
-&ensp;- [Capstone Video](#Capstone-Video)  
-&ensp;- [Demo Videos](#Demo-Videos)  
-&ensp;- [Coding Explained](#Coding-Explained)  
+&ensp;[Group Members](#Group-Members)  
+&ensp;[Project Description](#Project-Description)  
+&ensp;[Capstone Video](#Capstone-Video)
+&ensp;[Demo Videos](#Demo-Videos)
+&ensp;[Coding Explained](#Coding-Explained)
+&ensp;[Links](#Links)  
 
 ## Project Description
 
@@ -41,6 +42,8 @@
 ### Smoothing Algorithm
 ![alt text](https://github.com/jjliska/capstone/blob/main/Media/SmoothingAlgorythms.png)  
 &ensp;We use two seperate smoothing algorithm to try and smooth the movement of the arm. The first is run on the python script which uses an acceleration equation to gently accelerate to a top velocity and then once it reaches the bounding box, or facial positioning data is nolonger available, the velocity gently lowers back to zero.
+
+## Links
 
 ## References:
 #### [Ender 3 Cable Chain](https://www.thingiverse.com/thing:2920060)
