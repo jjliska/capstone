@@ -172,6 +172,18 @@ def velocityHandler(velNum,direction):
 
 &ensp;[From ServoController.ino](https://github.com/jjliska/capstone/blob/main/ServoController/ServoController.ino)
 ```c
+const int delayTime = 100;
+
+//Average time (in ms) between serial.write() on python script
+const int timeForMessages = 10000;
+
+//Rate of which the machine is smoothed so i runs every "milisecond" it could run faster
+//to create even smoother lines but since its run on parsecs and we only have a degree of
+//accuracy of about 1.2 +- some deflection it should be fine 
+const float smoothingRate = float(delayTime)/float(timeForMessages);
+
+...
+
 float moveToAngle(float input, float currentAngle, Servo servoName){
   float retFloat;
   float difference = abs(input-currentAngle);
