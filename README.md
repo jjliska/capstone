@@ -81,6 +81,12 @@ def angles(x,y):
   A2 = lawOfCosines(arm1,arm2,dist)
   return A1, A2
   
+def rotateX(ox,x,angle):
+  return ox+np.cos(angle)*(x-ox)
+
+def rotateZ(ox,x,angle):
+  return np.sin(angle)*(x-ox)
+  
 ...
   
 a1, a2 = angles(x,y)
