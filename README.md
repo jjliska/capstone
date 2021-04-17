@@ -228,3 +228,4 @@ We attempt to stop the robot from seriously damaging itself in the event that th
 #### &ensp;[Emotion Model](https://drive.google.com/file/d/1192YC8mYKaCbCoACP8hTfr9PCMC2iN30/view?usp=sharing) from [jaydeepthik](https://github.com/jaydeepthik)
 #### &ensp;[Face Detection](https://realpython.com/face-detection-in-python-using-a-webcam/)
 #### &ensp;[Two-way communication between Python 3 and Unity (C#) - Y. T. Elashry](https://github.com/Siliconifier/Python-Unity-Socket-Communication.git)
+#### &ensp;[EEPROM writing on teensy](https://www.pjrc.com/teensy/td_libs_EEPROM.html)
