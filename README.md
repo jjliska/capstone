@@ -66,6 +66,11 @@ def lawOfCosines(a,b,c):
 def distance(x1,y1,x2,y2):
   return np.sqrt((x1-x2)**2+((y1-y2)**2))
 
+def distanceMidArm(angle):
+  opp = np.cos(angle) * arm1
+  adj = np.sin(angle) * arm1
+  return opp, adj
+
 ...
 
 def angles(x,y):
