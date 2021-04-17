@@ -1,8 +1,8 @@
 # AME 486 - Capstone - Reflection
 
 ##### Table of Contents  
-[Group Members](#Group Members)  
-[Fusion 360 Models](#Fusion 360 Models)  
+[Group Members](#Group-Members)  
+[Fusion 360 Models](#Fusion-360-Models)  
 
 ## Group Members
 Albert Bang - Unity/Animator  
