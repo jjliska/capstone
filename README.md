@@ -10,8 +10,10 @@
 &ensp;[References](#References)  
 
 ## Project Description
+&ensp;<sub>[Back to Top](#AME-486---Capstone---Reflection)</sub>
 
 ## Group Members
+&ensp;<sub>[Back to Top](#AME-486---Capstone---Reflection)</sub>
 &ensp;Albert Bang - Unity/Animator  
 &ensp;Ivan Mendoza - Programming/Building  
 &ensp;Jack Carroll - Sound Designer  
@@ -30,7 +32,6 @@
 [![alt text](https://img.youtube.com/vi/l52GL87oeng/0.jpg)](https://www.youtube.com/watch?v=l52GL87oeng)
 
 ## Coding Explained
-
 &ensp;<sub>[Back to Top](#AME-486---Capstone---Reflection)</sub>
 
 ##### Quick Links to Coding Explained
@@ -48,8 +49,10 @@
 &ensp;We use two seperate smoothing algorithm to try and smooth the movement of the arm. The first is run on the python script which uses an acceleration equation to gently accelerate to a top velocity and then once it reaches the bounding box, or facial positioning data is nolonger available, the velocity gently lowers back to zero.
 
 ## Links
+&ensp;<sub>[Back to Top](#AME-486---Capstone---Reflection)</sub>
 
 ## References:
+&ensp;<sub>[Back to Top](#AME-486---Capstone---Reflection)</sub>
 #### [Ender 3 Cable Chain](https://www.thingiverse.com/thing:2920060)
 #### [Emotion Model](https://drive.google.com/file/d/1192YC8mYKaCbCoACP8hTfr9PCMC2iN30/view?usp=sharing) from [jaydeepthik](https://github.com/jaydeepthik)
 #### [Face Detection](https://realpython.com/face-detection-in-python-using-a-webcam/)
