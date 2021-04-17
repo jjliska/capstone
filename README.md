@@ -247,13 +247,32 @@ float moveToAngle(float input, float currentAngle, Servo servoName){
 ### Other
 * Angular Memory in the event of a Crash
 
-<details><summary>Python Script</summary>
+<details><summary>C/C++ Script</summary>
 <p>
 
 ```c
 if(millis()-eepromTimer >= eepromDelay){
   writeStringToEEPROM(0, eepString);
 }
+
+String readStringFromEEPROM(int addrOffset){
+  int newStrLen = EEPROM.read(addrOffset);
+  char data[newStrLen + 1];
+  for (int i = 0; i < newStrLen; i++){
+    data[i] = EEPROM.read(addrOffset + 1 + i);
+  }
+  data[newStrLen] = '\0';
+  return String(data);
+}
+
+void writeStringToEEPROM(int addrOffset, const String &strToWrite){
+  byte len = strToWrite.length();
+  EEPROM.write(addrOffset, len);
+  for (int i = 0; i < len; i++){
+    EEPROM.write(addrOffset + 1 + i, strToWrite[i]);
+  }
+}
+
 ```
 </p>
 </details>
