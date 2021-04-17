@@ -2,7 +2,7 @@
 # Team: Reflection
 # Members: Joshua Liska - Programming/Engineering/Fusion360 Modeling/Building
 #          Ivan Mendoza - Programming/Building
-#          John Carroll - Sound Designer/Unity Programming
+#          Jack Carroll - Sound Designer/Unity Programming
 #          Albert Bang - Visual Artist/Unity Programming/3D Modeling
 #
 # References: Emotion Model: https://drive.google.com/file/d/1192YC8mYKaCbCoACP8hTfr9PCMC2iN30/view?usp=sharing from https:/github.com/jaydeepthik/
