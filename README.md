@@ -33,13 +33,29 @@
 ## Demo Videos
 &ensp;<sup>[Back to Top](#AME-486---Capstone---Reflection)</sup>  
 ### Unity Demo
-[![alt text](https://img.youtube.com/vi/sWtO3qcnU5k/0.jpg)](https://www.youtube.com/watch?v=sWtO3qcnU5k)
+<iframe width="560" height="315"
+src="https://www.youtube.com/watch?v=sWtO3qcnU5k" 
+frameborder="0" 
+allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" 
+allowfullscreen></iframe>
 ### Tracking Demo
-[![alt text](https://img.youtube.com/vi/6vG7myi-orQ/0.jpg)](https://www.youtube.com/watch?v=6vG7myi-orQ)
+<iframe width="560" height="315"
+src="https://www.youtube.com/watch?v=6vG7myi-orQ" 
+frameborder="0" 
+allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" 
+allowfullscreen></iframe>
 ### Smoothing Demo
-[![alt text](https://img.youtube.com/vi/c3GQ3jPTU7w/0.jpg)](https://www.youtube.com/watch?v=c3GQ3jPTU7w)
+<iframe width="560" height="315"
+src="https://www.youtube.com/watch?v=c3GQ3jPTU7w" 
+frameborder="0" 
+allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" 
+allowfullscreen></iframe>
 ### Alpha Demo
-[![alt text](https://img.youtube.com/vi/l52GL87oeng/0.jpg)](https://www.youtube.com/watch?v=l52GL87oeng)
+<iframe width="560" height="315"
+src="https://www.youtube.com/watch?v=l52GL87oeng" 
+frameborder="0" 
+allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" 
+allowfullscreen></iframe>
 
 ## Explanations
 &ensp;<sup>[Back to Top](#AME-486---Capstone---Reflection)</sup>
