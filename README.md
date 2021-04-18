@@ -33,25 +33,21 @@
 ## Demo Videos
 &ensp;<sup>[Back to Top](#AME-486---Capstone---Reflection)</sup>  
 ### Unity Demo
-<iframe width="560" height="315"
-src="https://www.youtube.com/watch?v=sWtO3qcnU5k" 
-frameborder="0" 
-allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" 
-allowfullscreen></iframe>
+    <iframe width="560" height="315" src="https://www.youtube.com/watch?v=sWtO3qcnU5k" frameborder="0"allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 ### Tracking Demo
-<iframe width="560" height="315"
+    <iframe width="560" height="315"
 src="https://www.youtube.com/watch?v=6vG7myi-orQ" 
 frameborder="0" 
 allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" 
 allowfullscreen></iframe>
 ### Smoothing Demo
-<iframe width="560" height="315"
+    <iframe width="560" height="315"
 src="https://www.youtube.com/watch?v=c3GQ3jPTU7w" 
 frameborder="0" 
 allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" 
 allowfullscreen></iframe>
 ### Alpha Demo
-<iframe width="560" height="315"
+    <iframe width="560" height="315"
 src="https://www.youtube.com/watch?v=l52GL87oeng" 
 frameborder="0" 
 allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" 
