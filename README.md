@@ -38,6 +38,11 @@
 ##### Poetntial Solutions   
 &ensp;A solution is to use a far more powerful computer to render the program in. This would allow for greater frame rates as well as being able to render emotions more accurately. A good small form factor computer for this would be an nvidida jetson, although it is an arm architecture processor, which would not allow for 
 &ensp;The facial expression detection dataset should be trimmed and retrained to allow for better facial expression tracking. This would 
+#### Serial Read Issue
+##### The Problem  
+&ensp;There seems to be an issue with the Serial.Read on the microcontroller, for some reason even when reading bytes and converting to a data structure it will occasionally throw an error. This will end up crashing the program, and was initially the reason we needed so many try-catch and an eeprom safety net for if the program were to crash we could smoothly go back to the starting position and restart the program.
+##### Potential Solutions  
+&ensp;From many of the statements online this seems to be an issue with the arduino String data strcuture and it occasionally corrupting memory. That being said we have a one way serial communication and the python program, running on a seperate computer, is crashing first. As of yet we do not have a concrete solution, simply possible conjecture that may help lead to a solution.
 #### Speed Under Load  
 ##### The Problem  
 &ensp;The speed is greatly affected under the compelte load of the arm, roughly 1.3kgs. This causes us to either offset the amount of smoothness in the arm to consistantly track the face, or to reduce the speed. We chose to reduce both slightly so they remain hand in hand. We attempted to limit this effect by creating a smoothing algorithm that attemtped to take this into account.  
