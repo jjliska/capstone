@@ -12,6 +12,7 @@
 &ensp;[References](#References)  
 
 ## Project Description  
+&ensp;Our project, Reflections, allows a user to interact with a robotic appendage via their movements and facial expression.
 
 ## Group Members  
 &ensp;<sup>[Back to Top](#AME-486---Capstone---Reflection)</sup>  
@@ -24,25 +25,29 @@
 &ensp;<sup>[Back to Top](#AME-486---Capstone---Reflection)</sup>  
 &ensp;Not currently uploaded.
 
-## Successes  
+## Improvements/Issues  
 &ensp;<sup>[Back to Top](#AME-486---Capstone---Reflection)</sup>  
-&ensp;- 
-&ensp;- 
-&ensp;- 
-&ensp;- 
-
-## Improvements/Issues   
-&ensp;<sup>[Back to Top](#AME-486---Capstone---Reflection)</sup>  
+#### Quick Links for Issues
+&ensp;[Emotion and Facial Tracking](#Emotion-and-Facial-Tracking)  
+&ensp;[Speed Under Load](#Speed-Under-Load)  
+&ensp;[Thermal Deformation](#Thermal-Deformation)  
+#### Emotion and Facial Tracking  
+##### The Problem  
+&ensp;The consistancy of the facial tracking system we used was not the most precise due to several reasons. One such reason, we suspect, is the camera quality was reduced so that it would run faster, as well as the dataset we used was most likely not precise enough for the system.
+&ensp; Another issue we faced was the lag caused by the emotion rendering system. We ended up setting this to run four to six times a minute for multiple reasons. One being the speed of the program was greatly increased when the emotions were only extracted several times a minute as well as the facial expressions of the unity program were allowed time to gently fade into eachother. The emotion tracking was also not the most consistant, the dataset we used returned a roughly 66% accurate reading. It also has particular issues tracking emotion if there isn't enough light, hence the addition of a light ontop of the arm.
+##### Poetntial Solutions   
+&ensp;A solution is to use a far more powerful computer to render the program in. This would allow for greater frame rates as well as being able to render emotions more accurately. A good small form factor computer for this would be an nvidida jetson, although it is an arm architecture processor, which would not allow for 
+&ensp;The facial expression detection dataset should be trimmed and retrained to allow for better facial expression tracking. This would 
 #### Speed Under Load  
 ##### The Problem  
 &ensp;The speed is greatly affected under the compelte load of the arm, roughly 1.3kgs. This causes us to either offset the amount of smoothness in the arm to consistantly track the face, or to reduce the speed. We chose to reduce both slightly so they remain hand in hand. We attempted to limit this effect by creating a smoothing algorithm that attemtped to take this into account.  
 &ensp;[Smoothing Algorithm](#Smoothing-Algorithm)  
-##### The Solution  
-&ensp;
+##### Poetntial Solutions   
+&ensp;The solution is to, again, increase the torque of the motors so that they are constanlty running efficiently and are not being damped by the load on the system. This would allow them to greatly increase their speed and accuracy while still maintaining a level of smoothness. To accomplish the amount of speed and accuracy for a real world accplication, and long term, product this item would need roughly a1 = 80kgs/cm, a2 = 60kgs/cm, a3 = 40kgs/cm, and a4 = 40kgs/cm. However these would most likely not be servo motors as stepper motors would allow us much more versatility than the servos, as well as a much sturdier mounting system through their metal chasis.
 #### Thermal Deformation  
-##### The Problem
+##### The Problem  
 &ensp;Since everything was printed in PLA there wasn't much resistance to the motor reaching peak torque and amperage pull begin giving off a lot of heat. This then caused the PLA to deform under tension, as it is being pulled between the gear and the tensioning bracket. This caused warping in the from of the motor mount which eventually lead to a loss of torque as the motor would pull forward and loosen tension on the belt, forcing the arm to skip steps.
-##### The Solution
+##### Poetntial Solutions  
 &ensp;The solution would be to either print the part in a different material, such as ABS which has higher thermal resistance or, as a more long term solution, replacing a2 (the middle arm motor) with a higher torque motor so it is more efficient under load.
 
 ## Demo Videos
