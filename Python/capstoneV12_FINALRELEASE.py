@@ -64,7 +64,7 @@ sock = U.UdpComms(udpIP="127.0.0.1", portTX=8000, portRX=8001, enableRX=True, su
 # z is changed by the placement of the box horizontally
 x = 0
 y = 40
-zRotation = 90
+zRotation = 135
 
 #CONSTANTS <<LEAVE UNTOUCHED>>
 #Base is technically irrelevant but it looks better to have a sized base for the graph
@@ -96,7 +96,7 @@ a3Torque = 25*gearRatio
 a1MaxAngle = [0,180]
 #if x is negative the angle must remain [45,90] else [45,180]
 a2MaxAnglePos = [45,180]
-a2MaxAngleNeg = [45,90]
+a2MaxAngleNeg = [45,135] # Changed from [45,90] to [45,135] maybe this will allow for more backwards movement
 a3MaxAngle = [0,180]
 a4MaxAngle = [0,270]
 
@@ -107,7 +107,8 @@ facialEmotion = ""
 noFaceDetected = 10
 noFaceTime = 10
 
-#Takes off 15% to ensure the system is not overloading
+# Takes off 40% to ensure the system is not overloading
+# Servos are also sold as holding torque not rotational torque
 def acceptableRange(input):
   return input*0.6
 
@@ -191,12 +192,14 @@ yPlot = [0,base,my+base,y+base,y+base]
 xPlot3D = [rotateX(0,x,np.radians(a4)) for x in xPlot]
 zPlot3D = [rotateZ(0,x,np.radians(a4)) for x in xPlot]
 
+# The bounds checker as its called multiple times, so to reduce code this is ran multiple times
 def angleChecker(array,angle):
   if angle >= np.radians(array[0]) and angle <= np.radians(array[1]):
     return True
   else:
     return False
 
+# Verifies the angles are properly in bounds
 def angleHandler(angle1,angle2,angle3,x):
   if angleChecker(a1MaxAngle,angle1) and angleChecker(a3MaxAngle,angle3):
     if x >= 0:
@@ -212,12 +215,14 @@ def angleHandler(angle1,angle2,angle3,x):
   else:
     return False
 
+# Handles x position verification
 def positionHandlerX(x):
   if x >= accXLow and x <= accXHigh:
     return True
   else:
     return False
 
+# Handles y position verification
 def positionHandlerY(x,y):
   if x >= accXLow and x <= accXHigh:
     if x >= 0:
@@ -233,6 +238,11 @@ def positionHandlerY(x,y):
   else:
     return False
 
+# This is ugly code but it works, to cut this down in the future it would be wise
+# to seperate this into three seperate functions as there are redundant calls for information
+# Checks if Y is in bounds and its a1, a2, a3
+# Checks if X is in bounds and its a1, a2, a3
+# Checks if the Z angle is in bounds
 def updateVariables(tempX,tempY,tempZRot):
   global x,y
   global a1,a2,a3
@@ -252,6 +262,7 @@ def updateVariables(tempX,tempY,tempZRot):
 
   yPlottemp = [0,base,mytemp+base,tempY+base,tempY+base]
 
+  #Y position and y angle check
   if angleHandler(a1temp,a2temp,a3temp,x):
     if positionHandlerY(x,tempY):
       y = tempY
@@ -270,6 +281,7 @@ def updateVariables(tempX,tempY,tempZRot):
 
   xPlottemp = [0,0,mxtemp,tempX,tempX+hand]
 
+  # X Position and x angle check
   if angleHandler(a1temp,a2temp,a3temp,tempX):
     if positionHandlerX(tempX):
       x = tempX
@@ -278,6 +290,7 @@ def updateVariables(tempX,tempY,tempZRot):
       dist = disttemp
       xPlot= xPlottemp
 
+  # Z Rotation Check
   if angleChecker(a4MaxAngle,a4temp):
     global zRotation
     zRotation = tempZRot
@@ -290,13 +303,17 @@ def updateVariables(tempX,tempY,tempZRot):
   toSerial()
   toSocket()
 
+# Sends data to the UDP socket: centerFaceX,centerFaceY,a4,emotion
 def toSocket():
   centerFaceX, centerFaceY = getCenterBox()
   socketString = str(centerFaceX)+","+str(centerFaceY)+","+str(np.degrees(a4))+","+facialEmotion
   sock.SendData(socketString)
 
+# Sends data to the microcontroller: a1,a2,a3,a4\n
 def toSerial():
   try:
+    # Attempts to open the serial port constantly, or limit the amount of
+    # processing power going towards sending data to the teensy if its not connected
     if not ser.is_open:
       ser.open()
     elif ser.is_open:
@@ -325,6 +342,7 @@ centerScreen=[cameraRes[0]/2,cameraRes[1]/2]
 def getCenterBox():
   return (facePos[0]+(facePos[2]/2)-centerScreen[0]),(centerScreen[1]-facePos[1]-(facePos[3]/2))
 
+# Calculate the static boundaries of the camera, used in facePosHandler
 screenOffset = 1.0/6.0
 boundsRight = centerScreen[0]*screenOffset
 boundsLeft = centerScreen[0]*screenOffset*(-1)
@@ -334,8 +352,9 @@ boundsBottom = centerScreen[1]*screenOffset*(-1)
 
 # Arbitrary values that seem to give a good distance between the arm and the
 # person so that there is no way the arm will malfunction and hit the person
-boundsFar = 100
-boundsNear = 140
+# 100 to 140 changed to 80 to 120
+boundsFar = 80
+boundsNear = 120
 
 def facePosHandler():
   # x axis of camera is z axis of robot
@@ -417,20 +436,22 @@ def velocityHandler(velNum,direction):
 #GUI ELEMENTS
 #------------------------------------------------------------------------------------------------------------
 #Instancing the gui frame
+# Root tkinter frame
 root = Tk()
 root.title("Capstone")
 root.geometry("1920x1080")
 
-#Text frame for the label
 container = Frame(root,bg="darkgrey")
 container.pack(padx=12,pady=12)
 
+# Text information frame
 textFrame = Frame(container)
 textFrame.pack(side=LEFT)
 
 label1 = Label(textFrame, text="Temp", justify=LEFT,bg="darkgrey",width=30,height=100)
 label1.pack(fill=BOTH)
 
+# Graphing frames
 graphFrame = Frame(container)
 graphFrame.pack(side=LEFT)
 
@@ -452,6 +473,7 @@ ax2.set_zlim([0,(arm1*2)+base])
 graph = FigureCanvasTkAgg(fig, graphFrame)
 graph.get_tk_widget().pack()
 
+# Webcam frame and ML information under it
 webcamFrame = Label(container,text="Temp",width=cameraRes[0],height=cameraRes[1])
 webcamFrame.pack(side=TOP,padx=12,pady=12)
 textFrame2 = Frame(container)
@@ -527,15 +549,15 @@ def flipflop():
   global getMood
   if not getMood:
     getMood = True
-  flipflopContainer.after(5000, flipflop)
+  flipflopContainer.after(20000 , flipflop)
 
 #Face cam portion of the GUI
-#Getting n-nearest data from the xml file
+#Getting k-nearest data from the xml file
 cascPath = "haarcascade_frontalface_default.xml"
+faceCascade = cv2.CascadeClassifier(cascPath)
 modelPath = "model_35_91_61.h5"
 emotion =  ['Anger', 'Disgust', 'Fear', 'Happy', 'Sad', 'Surprise', 'Neutral']
 model = keras.models.load_model(modelPath)
-faceCascade = cv2.CascadeClassifier(cascPath)
 
 #grabbing the camera
 try:
@@ -558,6 +580,8 @@ def webcamStream():
 
     gray = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
 
+    # Sets the face to gray, scales it, and then sets min neighbor and min size
+    # These all help in removing false positives that the program sees and to reduce error.
     faces = faceCascade.detectMultiScale(
       gray,
       scaleFactor=1.2,
@@ -573,8 +597,11 @@ def webcamStream():
 
     # Draw a rectangle around the faces
     for (x, y, w, h) in faces:
-      # Every second get the emotion written on the face via a 48*48 "facial structure" which pulls bounding data and refers to a trained model
+      # Every second get the emotion written on the face via a 48*48
+      # "facial structure" which pulls bounding data and refers to a trained model
       if getMood:
+        # Gets the face, sets it to a 48*48 size frame and then parses it into
+        # the model to attempt to find what expression is being stolen
         face_component = gray[y:y+h, x:x+w]
         fc = cv2.resize(face_component, (48, 48))
         inp = np.reshape(fc,(1,48,48,1)).astype(np.float32)
@@ -595,6 +622,8 @@ def webcamStream():
     webcamFrame.imgtk = imgtk
     webcamFrame.configure(image=imgtk)
   except:
+    # This references a getTime() as there were issues with rendering frames on
+    # the pi and it would occasionally drop a frame due to the tensor model
     print("Frame dropped @ "+getTime())
 
   # No Face Detected velocity handler

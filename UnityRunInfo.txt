@@ -1,0 +1,2 @@
+Unity run script with:
+Game.exe -screen-fullscreen 1 -monitor 2
