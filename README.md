@@ -295,6 +295,7 @@ float moveToAngle(float input, float currentAngle, Servo servoName){
 
 ### Other
 #### Angular Memory in the Event of a Crash
+&ensp;We attempt to stop the robot from seriously damaging itself in the event that the script throws an error. This saves the angular information every several seconds so that, if the program is restarted it will then attempt to rehome to a set location from the stored angular data.
 
 <details><summary>C/C++ Script</summary>
 <p>
@@ -328,9 +329,6 @@ void writeStringToEEPROM(int addrOffset, const String &strToWrite){
 
 </p>
 </details>
-
-&ensp;We attempt to stop the robot from seriously damaging itself in the event that the script throws an error. This saves the angular information every several seconds so that, if the program is restarted it will then attempt to rehome to a set location from the stored angular data.
-
 
 ## Links
 &ensp;<sup>[Back to Top](#AME-486---Capstone---Reflection)</sup>  
