@@ -1,6 +1,6 @@
 # AME 486 - Capstone - Reflection  
 
-<img src="https://github.com/jjliska/capstone/blob/main/Media/Poster.png" width="220" height="340">
+<img src="https://github.com/jjliska/capstone/blob/main/Media/Poster.png" width="330" height="510">
 
 #### Table of Contents  
 &ensp;[Group Members](#Group-Members)  
