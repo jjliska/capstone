@@ -26,9 +26,24 @@
 
 ## Successes  
 &ensp;<sup>[Back to Top](#AME-486---Capstone---Reflection)</sup>  
+&ensp;- 
+&ensp;- 
+&ensp;- 
+&ensp;- 
 
-## Improvements  
+## Improvements/Issues   
 &ensp;<sup>[Back to Top](#AME-486---Capstone---Reflection)</sup>  
+#### Speed Under Load  
+##### The Problem  
+&ensp;The speed is greatly affected under the compelte load of the arm, roughly 1.3kgs. This causes us to either offset the amount of smoothness in the arm to consistantly track the face, or to reduce the speed. We chose to reduce both slightly so they remain hand in hand. We attempted to limit this effect by creating a smoothing algorithm that attemtped to take this into account.  
+&ensp;[Smoothing Algorithm](#Smoothing-Algorithm)  
+##### The Solution  
+&ensp;
+#### Thermal Deformation  
+##### The Problem
+&ensp;Since everything was printed in PLA there wasn't much resistance to the motor reaching peak torque and amperage pull begin giving off a lot of heat. This then caused the PLA to deform under tension, as it is being pulled between the gear and the tensioning bracket. This caused warping in the from of the motor mount which eventually lead to a loss of torque as the motor would pull forward and loosen tension on the belt, forcing the arm to skip steps.
+##### The Solution
+&ensp;The solution would be to either print the part in a different material, such as ABS which has higher thermal resistance or, as a more long term solution, replacing a2 (the middle arm motor) with a higher torque motor so it is more efficient under load.
 
 ## Demo Videos
 &ensp;<sup>[Back to Top](#AME-486---Capstone---Reflection)</sup>  
