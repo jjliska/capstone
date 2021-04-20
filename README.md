@@ -128,7 +128,7 @@ else:
 a4 = np.radians(zRotation)
 ```
 
-&ensp;[From capstoneV11.py](https://github.com/jjliska/capstone/blob/main/capstoneV11_UNDEBUGGED.py)
+&ensp;[From capstoneV12_FINAlRELEASE.py](https://github.com/jjliska/capstone/blob/main/Code/Python/capstoneV12_FINALRELEASE.py)
 
 </p>
 </details>
@@ -186,7 +186,7 @@ def facePosHandler():
     updateVariables(x+tempX,y+tempY,zRotation+tempRotZ)
 ```
 
-&ensp;[From capstoneV11.py](https://github.com/jjliska/capstone/blob/main/capstoneV11_UNDEBUGGED.py)
+&ensp;[From capstoneV12_FINAlRELEASE.py](https://github.com/jjliska/capstone/blob/main/Code/Python/capstoneV12_FINALRELEASE.py)
 
 </p>
 </details>
@@ -231,7 +231,7 @@ def velocityHandler(velNum,direction):
   return velocity[velNum]
 ```
 
-&ensp;[From capstoneV11.py](https://github.com/jjliska/capstone/blob/main/capstoneV11_UNDEBUGGED.py)
+&ensp;[From capstoneV12_FINAlRELEASE.py](https://github.com/jjliska/capstone/blob/main/Code/Python/capstoneV12_FINALRELEASE.py)
 
 </p>
 </details>
