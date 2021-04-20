@@ -12,7 +12,7 @@
 &ensp;[References](#References)  
 
 ## Project Description  
-&ensp;"Reflection" is an immersive, interactive art instillation that attempts to give people a form of interaction during isolation.
+&ensp;"Reflection" is an immersive, interactive art instillation that attempts to give people a form of interaction during isolation. The installation consists of two key components, the user and the robot cordially named Dum-E. Users interact with the piece by walking around in the scene, and looking at the robot. The machine learning algorithms will attempt to follow the person in the scene and react to their location and emotion. When Dum-E identifies a new emotion it will react with its own emotion and play a song at a specific location given where the user is.
 
 ## Group Members  
 &ensp;<sup>[Back to Top](#AME-486---Capstone---Reflection)</sup>  
