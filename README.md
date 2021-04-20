@@ -29,6 +29,7 @@
 &ensp;<sup>[Back to Top](#AME-486---Capstone---Reflection)</sup>  
 #### Quick Links for Issues
 &ensp;[Emotion and Facial Tracking](#Emotion-and-Facial-Tracking)  
+&ensp;[Serial Read Issue](#Serial-Read-Issue)  
 &ensp;[Speed Under Load](#Speed-Under-Load)  
 &ensp;[Thermal Deformation](#Thermal-Deformation)  
 #### Emotion and Facial Tracking  
