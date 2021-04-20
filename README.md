@@ -25,7 +25,7 @@
 
 ## Capstone Video  
 &ensp;<sup>[Back to Top](#AME-486---Capstone---Reflection)</sup>  
-&ensp;Not currently uploaded.
+[![IMAGE ALT TEXT HERE](https://yt-embed.herokuapp.com/embed?v=mnH26vL3UBw)](https://www.youtube.com/watch?v=mnH26vL3UBw)
 
 ## Improvements/Issues  
 &ensp;<sup>[Back to Top](#AME-486---Capstone---Reflection)</sup>  
