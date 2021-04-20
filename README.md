@@ -283,7 +283,7 @@ float moveToAngle(float input, float currentAngle, Servo servoName){
 }
 ```
 
-&ensp;[From ServoController.ino](https://github.com/jjliska/capstone/blob/main/ServoController/ServoController.ino)
+&ensp;[From ServoController.ino](https://github.com/jjliska/capstone/blob/main/Code/ServoController/ServoController.ino)
 
 </p>
 </details>
@@ -324,7 +324,7 @@ void writeStringToEEPROM(int addrOffset, const String &strToWrite){
 
 ```
 
-&ensp;[From ServoController.ino](https://github.com/jjliska/capstone/blob/main/ServoController/ServoController.ino)
+&ensp;[From ServoController.ino](https://github.com/jjliska/capstone/blob/main/Code/ServoController/ServoController.ino)
 
 </p>
 </details>
