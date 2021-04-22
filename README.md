@@ -39,8 +39,8 @@
 &ensp;The consistency of the facial tracking system we used was not the most precise due to several reasons. One such reason, we suspect, is the camera quality was reduced so that it would run faster, as well as the dataset we used was most likely not precise enough for the system.  
 &ensp; Another issue we faced was the lag caused by the emotion rendering system. We ended up setting this to run four to six times a minute for multiple reasons. One being the speed of the program was greatly increased when the emotions were only extracted several times a minute as well as the facial expressions of the unity program were allowed time to gently fade into each other. The emotion tracking was also not the most consistent, the dataset we used returned a roughly 66% accurate reading. It also has particular issues tracking emotion if there isn't enough light, hence the addition of a light on top of the arm.
 ##### Potential Solutions   
-&ensp;A solution is to use a far more powerful computer to render the program in. This would allow for greater frame rates as well as being able to render emotions more accurately. A good small form factor computer for this would be an nvidia jetson, although it is an arm architecture processor, which would not allow for 
-&ensp;The facial expression detection dataset should be trimmed and retrained to allow for better facial expression tracking. This would 
+&ensp;A solution is to use a far more powerful computer to render the program in. This would allow for greater frame rates as well as being able to render emotions more accurately. A good small form factor computer for this would be an nvidia jetson, although it is an arm architecture processor, which would force us to either recompile the unreal engine source into an aarch64 architecture. We attempted to do this as well as exporting a unity project as an apk to run on android 11, however it didn't work as there were driver conflicts. 
+&ensp;The facial expression detection dataset should be trimmed and retrained to allow for better facial expression tracking specifically in low light conditions and retrain it with our faces as a training set. We could also use some sort of recursive learning that retrains the model once a given number of facial frames are taken from the camera. This would require quite a substantial amount of processing power though to allow everything else to run efficiently.
 #### Serial Read Issue
 ##### The Problem  
 &ensp;There seems to be an issue with the Serial.Read on the microcontroller, for some reason even when reading bytes and converting to a data structure it will occasionally throw an error. This will end up crashing the program, and was initially the reason we needed so many try-catch and an eeprom safety net for if the program were to crash we could smoothly go back to the starting position and restart the program.
@@ -391,13 +391,18 @@ void writeStringToEEPROM(int addrOffset, const String &strToWrite){
 </p>
 </details>
 
-#### Changing Facial Expression
-&ensp;We attempt to change the facial expression of the face model using facial data from the python script. This allows us to recreate the actors facial expression and try to interact with them visually and mimic their expressions.
+#### Changing Facial Expression and Direction
+&ensp;We attempt to change the facial expression of the face model using facial data from the python script. This allows us to recreate the actors facial expression and try to interact with them visually and mimic their expressions. We also change the target location of a armature deform to direct the face in a specific direction to look at the user while the arm moves to them. This gives the user the impression the arm is looking directly at them while it moves to center their face.
 
 <details><summary>C# Script</summary>
 <p>
 
 ```cs
+    TargetPosition = new Vector3(-1*x/25.0f, y/25.0f, zConst);
+    transform.position = TargetPosition;
+    
+...
+
   private void emotionHandler(){
     if(previousEmotion == ""){
       if(blendEmotion < blendFaceStop){
