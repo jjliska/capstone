@@ -20,7 +20,7 @@
 &ensp;<sup>[Back to Top](#AME-486---Capstone---Reflection)</sup>  
 &ensp;Albert Bang - Unity/Animator  
 &ensp;Ivan Mendoza - Programming/Building  
-&ensp;Jack Carroll - Sound Designer  
+&ensp;[Jack Carroll](https://soundcloud.com/sodonttalksmack) - Sound Designer  
 &ensp;[Joshua Liska](https://www.linkedin.com/in/joshua-liska-34a4b77b/) - Programming/Design/Engineering/Documentation
 
 ## Capstone Video  
