@@ -560,8 +560,9 @@ void writeStringToEEPROM(int addrOffset, const String &strToWrite){
 &ensp;- A collab with some of the basic inverse kinematic models we used is available here: [Google Colab](https://colab.research.google.com/drive/112x_Fhu4YKPZFFK7a1mo7FeFkNSDPJKg?usp=sharing)  
 &ensp;- A link to all of the 3D printed parts we designed and printed: [3D Prints](https://github.com/jjliska/capstone/tree/main/3D-Prints)  
 &ensp;- The Fusion 360 Model created: [Fusion 360](https://a360.co/3mX6sYx) &ensp;&ensp; *Note it is a large file so it will take a while to render on a browser.*  
-&ensp;- A link to the FBX models, and shape keys attached to them, we created for this project: [Models](https://github.com/jjliska/capstone/tree/main/Media/FacialModels)
-%ensp;- A link to all the music created by Jack Carroll: [Soundcloud](https://soundcloud.com/sodonttalksmack/sets/reflection)
+&ensp;- A link to the FBX models, and shape keys attached to them, we created for this project: [Models](https://github.com/jjliska/capstone/tree/main/Media/FacialModels)  
+%ensp;- A link to all the music created by Jack Carroll: [Soundcloud](https://soundcloud.com/sodonttalksmack/sets/reflection)  
+
 ## References
 &ensp;<sup>[Back to Top](#AME-486---Capstone---Reflection)</sup>
 #### &ensp;[Ender 3 Cable Chain](https://www.thingiverse.com/thing:2920060)
