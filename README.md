@@ -36,7 +36,7 @@
 &ensp;[Thermal Deformation](#Thermal-Deformation)  
 #### Emotion and Facial Tracking  
 ##### The Problem  
-&ensp;The consistency of the facial tracking system we used was not the most precise due to several reasons. One such reason, we suspect, is the camera quality was reduced so that it would run faster, as well as the dataset we used was most likely not precise enough for the system.
+&ensp;The consistency of the facial tracking system we used was not the most precise due to several reasons. One such reason, we suspect, is the camera quality was reduced so that it would run faster, as well as the dataset we used was most likely not precise enough for the system.  
 &ensp; Another issue we faced was the lag caused by the emotion rendering system. We ended up setting this to run four to six times a minute for multiple reasons. One being the speed of the program was greatly increased when the emotions were only extracted several times a minute as well as the facial expressions of the unity program were allowed time to gently fade into each other. The emotion tracking was also not the most consistent, the dataset we used returned a roughly 66% accurate reading. It also has particular issues tracking emotion if there isn't enough light, hence the addition of a light on top of the arm.
 ##### Potential Solutions   
 &ensp;A solution is to use a far more powerful computer to render the program in. This would allow for greater frame rates as well as being able to render emotions more accurately. A good small form factor computer for this would be an nvidia jetson, although it is an arm architecture processor, which would not allow for 
