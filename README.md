@@ -393,6 +393,10 @@ void writeStringToEEPROM(int addrOffset, const String &strToWrite){
 
 #### Changing Music Based on Emotion and Location
 &ensp;We take emotion and facial data from the python script and pass it to a rotation object as well as an audio object that allows us to change the music depending on the mood shown as well as changing location to be directly behind where the arm considers itself to create a more interactive environment.
+
+<details><summary>C# Script</summary>
+<p>
+  
 ```cs
     audioRotation.transform.Rotate(0,rotation,0);
     
