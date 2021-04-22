@@ -465,6 +465,91 @@ void writeStringToEEPROM(int addrOffset, const String &strToWrite){
 </p>
 </details>
 
+#### Changing Facial Expression
+&ensp;We attempt to change the facial expression of the face model using facial data from the python script. This allows us to recreate the actors facial expression and try to interact with them visually and mimic their expressions.
+
+<details><summary>C# Script</summary>
+<p>
+
+```cs
+  private void emotionHandler(){
+    if(previousEmotion == ""){
+      if(blendEmotion < blendFaceStop){
+        blendEmotion += blendSpeedEmotion;
+        emotionCase(emotion);
+      }
+      else{
+        previousEmotion = emotion;
+      }
+    }
+    else{
+      if(previousEmotion != emotion){
+        if(blendEmotion > 0f){
+          blendEmotion -= blendSpeedEmotion;
+          emotionCase(previousEmotion);
+        }
+        else{
+          previousEmotion = emotion;
+        }
+      }
+      else{
+        if(blendEmotion < blendFaceStop){
+          blendEmotion += blendSpeedEmotion;
+          emotionCase(emotion);
+        }
+      }
+    }
+  }
+  
+...
+
+  private void emotionCase(string input){
+    //Determining which object is active/visible in the scene
+    if(input == "Fear"){
+      humanFaceParent.active = false;
+      gasMaskParent.active = true;
+    }
+    else{
+      humanFaceParent.active = true;
+      gasMaskParent.active = false;
+    }
+
+    //Emotion Case to identify what needs to happen visually to interact with the user
+    switch(input){
+      case "Anger":
+        skinnedMeshRenderer.SetBlendShapeWeight(0, blendEmotion);
+        break;
+      case "Disgust":
+        skinnedMeshRenderer.SetBlendShapeWeight(3, blendEmotion);
+        skinnedMeshRenderer.SetBlendShapeWeight(3, blendEmotion);
+        break;
+      case "Fear":
+        gasMaskParent.active = true;
+        break;
+      case "Happy":
+        skinnedMeshRenderer.SetBlendShapeWeight(2, blendEmotion);
+        break;
+      case "Sad":
+        skinnedMeshRenderer.SetBlendShapeWeight(3, blendEmotion);
+        break;
+      case "Surprise":
+        skinnedMeshRenderer.SetBlendShapeWeight(1, blendEmotion);
+        break;
+      case "Neutral":
+        //Do nothing its a neutral expression
+        break;
+      default:
+        humanFaceParent.active = true;
+        break;
+    }
+  }
+```
+
+&ensp;[From UdpSockets.cs](https://github.com/jjliska/capstone/blob/main/Code/UnityCode/UdpSocket.cs)
+
+</p>
+</details>
+
 ## Links
 &ensp;<sup>[Back to Top](#AME-486---Capstone---Reflection)</sup>  
 &ensp;- A collab with some of the basic inverse kinematic models we used is available here: [Google Colab](https://colab.research.google.com/drive/112x_Fhu4YKPZFFK7a1mo7FeFkNSDPJKg?usp=sharing)  
