@@ -134,6 +134,60 @@ a4 = np.radians(zRotation)
 
 </p>
 </details>
+### Machine Learning Data
+![alt text](https://raw.githubusercontent.com/jjliska/capstone/main/Media/Explanations/Machine%20learning%20explained.png)
+
+&ensp;We use a pre classified dataset available in the openCV library, this is a visual library for machine learning. The pre classified haarcascade_frontalface_default.xml has pre classifications for significant landmarks of the face, for instance the edge of the face is a fairly distinct shape that can be recognized as separate from most objects in everyday life. This allows us to find exactly in frame where the face is. It returns a face(x,y,w,h) object that gives us facial bounding data. We then use that box created by the openCV haarcascade to crop out what we consider the "face" and convert it into a 48x48 pixel image. This is then passed to a classifying model that finds facial data points and compares it to another pre classified model that contains definitions for "emotion" which is a fairly hard for computer vision to assume. This is due to many people having different facial structures and what they consider the emotion on their face. Although this is fairly hard the trained model we used had a 66% accuracy. Althought it often tended to find that I was angry, as my neutral face looked angry to it.
+
+```python
+cascPath = "haarcascade_frontalface_default.xml"
+faceCascade = cv2.CascadeClassifier(cascPath)
+modelPath = "model_35_91_61.h5"
+emotion =  ['Anger', 'Disgust', 'Fear', 'Happy', 'Sad', 'Surprise', 'Neutral']
+model = keras.models.load_model(modelPath)
+
+...
+
+    gray = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
+
+    # Sets the face to gray, scales it, and then sets min neighbor and min size
+    # These all help in removing false positives that the program sees and to reduce error.
+    faces = faceCascade.detectMultiScale(
+      gray,
+      scaleFactor=1.2,
+      minNeighbors=10,
+      minSize=(30, 30)
+    )
+
+...
+
+    # Draw a rectangle around the faces
+    for (x, y, w, h) in faces:
+      # Every second get the emotion written on the face via a 48*48
+      # "facial structure" which pulls bounding data and refers to a trained model
+      if getMood:
+        # Gets the face, sets it to a 48*48 size frame and then parses it into
+        # the model to attempt to find what expression is being stolen
+        face_component = gray[y:y+h, x:x+w]
+        fc = cv2.resize(face_component, (48, 48))
+        inp = np.reshape(fc,(1,48,48,1)).astype(np.float32)
+        inp = inp/255.
+        prediction = model.predict(inp)
+        em = emotion[np.argmax(prediction)]
+        facialEmotion = em
+        getMood = False
+
+      # Draw the standard rectangle and store facial data in the facePos array
+      cv2.rectangle(frame, (x, y), (x+w, y+h), (0, 255, 0), 2)
+      if not (x,y,w,h) == (0,0,0,0):
+        facePos = (x,y,w,h)
+      break
+```
+
+&ensp;[From capstoneV12_FINAlRELEASE.py](https://github.com/jjliska/capstone/blob/main/Code/Python/capstoneV12_FINALRELEASE.py)
+
+</p>
+</details>
 
 ### ML Facial Data to Movement
 ![alt text](https://github.com/jjliska/capstone/blob/main/Media/Explanations/FacialTracking.png)  
