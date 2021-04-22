@@ -74,7 +74,7 @@
 
 #### Quick Links for Explanations
 &ensp;[End Effector](#End-Effector)  
-&ensp;[Machine Learning Data](#Machine-Learning-Data)
+&ensp;[Machine Learning Data](#Machine-Learning-Data)  
 &ensp;[ML Facial Data to Movement](#ML-Facial-Data-to-Movement)  
 &ensp;[Smoothing Algorithm](#Smoothing-Algorithm)  
 &ensp;[Hardware](#Hardware)  
