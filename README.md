@@ -135,6 +135,7 @@ a4 = np.radians(zRotation)
 
 </p>
 </details>
+
 ### Machine Learning Data  
 ![alt text](https://github.com/jjliska/capstone/blob/main/Media/Explanations/MachineLearningExplained.png)
 
