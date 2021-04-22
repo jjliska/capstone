@@ -391,6 +391,76 @@ void writeStringToEEPROM(int addrOffset, const String &strToWrite){
 </p>
 </details>
 
+#### Changing Music Based on Emotion and Location
+&ensp;We take emotion and facial data from the python script and pass it to a rotation object as well as an audio object that allows us to change the music depending on the mood shown as well as changing location to be directly behind where the arm considers itself to create a more interactive environment.
+```cs
+    audioRotation.transform.Rotate(0,rotation,0);
+    
+...
+
+  private void musicHandler(){
+    int compEmot = musicComparison(emotion);
+    int compPreEmot = musicComparison(previousEmotion);
+    if(compPreEmot == 0){
+      if(volume < 1.0f){
+        volume += volumeSpeed;
+        musicCase(compEmot);
+      }
+    }
+    else{
+      if(compPreEmot != compEmot){
+        if(volume > 0f){
+          volume -= volumeSpeed;
+          musicCase(compPreEmot);
+        }
+      }
+      else{
+        if(volume < 1.0f){
+          volume += volumeSpeed;
+          musicCase(compEmot);
+        }
+      }
+    }
+  }
+
+  // Change this to add more audio tracks
+  private void musicCase(int input){
+    if(input != 0){
+      if(input == 1){
+        musicPlayer1.volume = volume;
+      }
+      else if(input == 2){
+        musicPlayer2.volume = volume;
+      }
+      else if(input == 3){
+        musicPlayer3.volume = volume;
+      }
+    }
+  }
+
+
+  // This is made easier to access to allow for more string comparisons as there may be a change to the audio track later
+  private int musicComparison(string input){
+    if(input == "Happy" || input == "Surprise"){
+      return 1;
+    }
+    else if(input == "Anger" || input == "Disgust" || input == "Fear"){
+      return 2;
+    }
+    else if(input == "Neutral" || input == "Sad"){
+      return 3;
+    }
+    else{
+      return 0;
+    }
+  }
+```
+
+&ensp;[From UdpSockets.cs](https://github.com/jjliska/capstone/blob/main/Code/UnityCode/UdpSocket.cs)
+
+</p>
+</details>
+
 ## Links
 &ensp;<sup>[Back to Top](#AME-486---Capstone---Reflection)</sup>  
 &ensp;- A collab with some of the basic inverse kinematic models we used is available here: [Google Colab](https://colab.research.google.com/drive/112x_Fhu4YKPZFFK7a1mo7FeFkNSDPJKg?usp=sharing)  
