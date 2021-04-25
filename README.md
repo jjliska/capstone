@@ -25,7 +25,7 @@
 
 ## Capstone Video  
 &ensp;<sup>[Back to Top](#AME-486---Capstone---Reflection)</sup>  
-[![IMAGE ALT TEXT HERE](https://yt-embed.herokuapp.com/embed?v=mnH26vL3UBw)](https://www.youtube.com/watch?v=mnH26vL3UBw)
+[![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/mnH26vL3UBw/0.jpg)](https://www.youtube.com/watch?v=mnH26vL3UBw)
 
 ## Improvements/Issues  
 &ensp;<sup>[Back to Top](#AME-486---Capstone---Reflection)</sup>  
@@ -61,13 +61,13 @@
 ## Demo Videos
 &ensp;<sup>[Back to Top](#AME-486---Capstone---Reflection)</sup>  
 ### Unity Demo
-[![IMAGE ALT TEXT HERE](https://yt-embed.herokuapp.com/embed?v=sWtO3qcnU5k)](https://www.youtube.com/watch?v=sWtO3qcnU5k)
+[![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/sWtO3qcnU5k/0.jpg)](https://www.youtube.com/watch?v=sWtO3qcnU5k)
 ### Tracking Demo
-[![IMAGE ALT TEXT HERE](https://yt-embed.herokuapp.com/embed?v=6vG7myi-orQ)](https://www.youtube.com/watch?v=6vG7myi-orQ)
+[![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/6vG7myi-orQ/0.jpg)](https://www.youtube.com/watch?v=6vG7myi-orQ)
 ### Smoothing Demo
-[![IMAGE ALT TEXT HERE](https://yt-embed.herokuapp.com/embed?v=c3GQ3jPTU7w)](https://www.youtube.com/watch?v=c3GQ3jPTU7w)
+[![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/c3GQ3jPTU7w/0.jpg)](https://www.youtube.com/watch?v=c3GQ3jPTU7w)
 ### Alpha Demo
-[![IMAGE ALT TEXT HERE](https://yt-embed.herokuapp.com/embed?v=l52GL87oeng)](https://www.youtube.com/watch?v=l52GL87oeng)
+[![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/l52GL87oeng/0.jpg)](https://www.youtube.com/watch?v=l52GL87oeng)
 
 ## Explanations
 &ensp;<sup>[Back to Top](#AME-486---Capstone---Reflection)</sup>
