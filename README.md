@@ -18,7 +18,7 @@
 
 ## Group Members  
 &ensp;<sup>[Back to Top](#AME-486---Capstone---Reflection)</sup>  
-&ensp;Albert Bang - Unity/Animator  
+&ensp;[Albert Bang](albertbang3000.wixsit.com/) - Unity/Animator  
 &ensp;[Ivan Mendoza](https://ivanmendozaportfolio.com/) - Programming/Building  
 &ensp;[Jack Carroll](https://soundcloud.com/sodonttalksmack) - Sound Designer  
 &ensp;[Joshua Liska](https://www.linkedin.com/in/joshua-liska-34a4b77b/) - Programming/Design/Engineering/Documentation
