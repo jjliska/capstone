@@ -349,7 +349,7 @@ float moveToAngle(float input, float currentAngle, Servo servoName){
 </details>
 
 ### Hardware
-![alt text](https://github.com/jjliska/capstone/blob/main/Media/Explanations/Hardware.png)  
+![alt text](https://github.com/jjliska/capstone/blob/main/Media/Explanations/Hardwarev1.png)  
 
 &ensp;We use a python script running on a laptop that draws information from a generic USB webcamera. The USB webcam passes visual information into a machine learning script that then creates a generic rectangle over the given persons face given the size and position of the face. This information is then stored and used by the script to effect the end effector. We do this to stabilize the LCD so that the interaction on the display is more stable for the user. The python script works by creating a vector model from given initial information along with the facial bounding box. This information includes length, mass, torque, and angular hard limits of the system. The system then determines what the maximum amount of force it can put on its joints before the motors will begin to slip. This information is then used in an inverse kinematic model ([stated in the End Effector](#End-Effector) portion of the explanation) of the robotic arm in which the end effector is moved inside of a 3D model to determine what the angles between the arms are. The information is then passed from this python script to a Teensy 3.5 in order to utilize pwm and additional vector smoothing.
 
