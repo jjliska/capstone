@@ -6,7 +6,6 @@
 &ensp;[Group Members](#Group-Members)  
 &ensp;[Project Description](#Project-Description)  
 &ensp;[Capstone Video](#Capstone-Video)  
-&ensp;[Successes](#Success)  
 &ensp;[Improvements](#Improvements)  
 &ensp;[Demo Videos](#Demo-Videos)  
 &ensp;[Explanations](#Explanations)  
@@ -18,14 +17,14 @@
 
 ## Group Members  
 &ensp;<sup>[Back to Top](#AME-486---Capstone---Reflection)</sup>  
-&ensp;Albert Bang - Unity/Animator  
-&ensp;Ivan Mendoza - Programming/Building  
-&ensp;Jack Carroll - Sound Designer  
-&ensp;[Joshua Liska](https://www.linkedin.com/in/joshua-liska-34a4b77b/) - Programming/Design/Engineering
+&ensp;[Albert Bang](https://albertbang3000.wixsit.com/) - Unity/Animator  
+&ensp;[Ivan Mendoza](https://ivanmendozaportfolio.com/) - Programming/Building  
+&ensp;[Jack Carroll](https://soundcloud.com/sodonttalksmack) - Sound Designer  
+&ensp;[Joshua Liska](https://www.linkedin.com/in/joshua-liska-34a4b77b/) - Programming/Design/Engineering/Documentation
 
 ## Capstone Video  
 &ensp;<sup>[Back to Top](#AME-486---Capstone---Reflection)</sup>  
-[![IMAGE ALT TEXT HERE](https://yt-embed.herokuapp.com/embed?v=mnH26vL3UBw)](https://www.youtube.com/watch?v=mnH26vL3UBw)
+[![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/mnH26vL3UBw/0.jpg)](https://www.youtube.com/watch?v=mnH26vL3UBw)
 
 ## Improvements/Issues  
 &ensp;<sup>[Back to Top](#AME-486---Capstone---Reflection)</sup>  
@@ -39,8 +38,8 @@
 &ensp;The consistency of the facial tracking system we used was not the most precise due to several reasons. One such reason, we suspect, is the camera quality was reduced so that it would run faster, as well as the dataset we used was most likely not precise enough for the system.  
 &ensp; Another issue we faced was the lag caused by the emotion rendering system. We ended up setting this to run four to six times a minute for multiple reasons. One being the speed of the program was greatly increased when the emotions were only extracted several times a minute as well as the facial expressions of the unity program were allowed time to gently fade into each other. The emotion tracking was also not the most consistent, the dataset we used returned a roughly 66% accurate reading. It also has particular issues tracking emotion if there isn't enough light, hence the addition of a light on top of the arm.
 ##### Potential Solutions   
-&ensp;A solution is to use a far more powerful computer to render the program in. This would allow for greater frame rates as well as being able to render emotions more accurately. A good small form factor computer for this would be an nvidia jetson, although it is an arm architecture processor, which would not allow for 
-&ensp;The facial expression detection dataset should be trimmed and retrained to allow for better facial expression tracking. This would 
+&ensp;A solution is to use a far more powerful computer to render the program in. This would allow for greater frame rates as well as being able to render emotions more accurately. A good small form factor computer for this would be an nvidia jetson, although it is an arm architecture processor, which would force us to either recompile the unreal engine source into an aarch64 architecture. We attempted to do this as well as exporting a unity project as an apk to run on android 11, however it didn't work as there were driver conflicts. 
+&ensp;The facial expression detection dataset should be trimmed and retrained to allow for better facial expression tracking specifically in low light conditions and retrain it with our faces as a training set. We could also use some sort of recursive learning that retrains the model once a given number of facial frames are taken from the camera. This would require quite a substantial amount of processing power though to allow everything else to run efficiently.
 #### Serial Read Issue
 ##### The Problem  
 &ensp;There seems to be an issue with the Serial.Read on the microcontroller, for some reason even when reading bytes and converting to a data structure it will occasionally throw an error. This will end up crashing the program, and was initially the reason we needed so many try-catch and an eeprom safety net for if the program were to crash we could smoothly go back to the starting position and restart the program.
@@ -61,20 +60,20 @@
 ## Demo Videos
 &ensp;<sup>[Back to Top](#AME-486---Capstone---Reflection)</sup>  
 ### Unity Demo
-[![IMAGE ALT TEXT HERE](https://yt-embed.herokuapp.com/embed?v=sWtO3qcnU5k)](https://www.youtube.com/watch?v=sWtO3qcnU5k)
+[![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/sWtO3qcnU5k/0.jpg)](https://www.youtube.com/watch?v=sWtO3qcnU5k)
 ### Tracking Demo
-[![IMAGE ALT TEXT HERE](https://yt-embed.herokuapp.com/embed?v=6vG7myi-orQ)](https://www.youtube.com/watch?v=6vG7myi-orQ)
+[![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/6vG7myi-orQ/0.jpg)](https://www.youtube.com/watch?v=6vG7myi-orQ)
 ### Smoothing Demo
-[![IMAGE ALT TEXT HERE](https://yt-embed.herokuapp.com/embed?v=c3GQ3jPTU7w)](https://www.youtube.com/watch?v=c3GQ3jPTU7w)
+[![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/c3GQ3jPTU7w/0.jpg)](https://www.youtube.com/watch?v=c3GQ3jPTU7w)
 ### Alpha Demo
-[![IMAGE ALT TEXT HERE](https://yt-embed.herokuapp.com/embed?v=l52GL87oeng)](https://www.youtube.com/watch?v=l52GL87oeng)
+[![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/l52GL87oeng/0.jpg)](https://www.youtube.com/watch?v=l52GL87oeng)
 
 ## Explanations
 &ensp;<sup>[Back to Top](#AME-486---Capstone---Reflection)</sup>
 
 #### Quick Links for Explanations
 &ensp;[End Effector](#End-Effector)  
-&ensp;[Machine Learning Data](#Machine-Learning-Data)
+&ensp;[Machine Learning Data](#Machine-Learning-Data)  
 &ensp;[ML Facial Data to Movement](#ML-Facial-Data-to-Movement)  
 &ensp;[Smoothing Algorithm](#Smoothing-Algorithm)  
 &ensp;[Hardware](#Hardware)  
@@ -135,8 +134,9 @@ a4 = np.radians(zRotation)
 
 </p>
 </details>
-### Machine Learning Data
-![alt text](https://github.com/jjliska/capstone/blob/main/Media/Explanations/Machine%20learning%20explained.png)
+
+### Machine Learning Data  
+![alt text](https://github.com/jjliska/capstone/blob/main/Media/Explanations/MachineLearningExplained.png)
 
 &ensp;We use a pre classified dataset available in the openCV library, this is a visual library for machine learning. The pre classified haarcascade_frontalface_default.xml has pre classifications for significant landmarks of the face, for instance the edge of the face is a fairly distinct shape that can be recognized as separate from most objects in everyday life. This allows us to find exactly in frame where the face is. It returns a face(x,y,w,h) object that gives us facial bounding data. We then use that box created by the openCV haarcascade to crop out what we consider the "face" and convert it into a 48x48 pixel image. This is then passed to a classifying model that finds facial data points and compares it to another pre classified model that contains definitions for "emotion" which is a fairly hard for computer vision to assume. This is due to many people having different facial structures and what they consider the emotion on their face. Although this is fairly hard the trained model we used had a 66% accuracy. Althought it often tended to find that I was angry, as my neutral face looked angry to it.
 
@@ -390,12 +390,177 @@ void writeStringToEEPROM(int addrOffset, const String &strToWrite){
 </p>
 </details>
 
+#### Changing Facial Expression and Direction
+&ensp;We attempt to change the facial expression of the face model using facial data from the python script. This allows us to recreate the actors facial expression and try to interact with them visually and mimic their expressions. We also change the target location of a armature deform to direct the face in a specific direction to look at the user while the arm moves to them. This gives the user the impression the arm is looking directly at them while it moves to center their face.
+
+<details><summary>C# Script</summary>
+<p>
+
+```cs
+    TargetPosition = new Vector3(-1*x/25.0f, y/25.0f, zConst);
+    transform.position = TargetPosition;
+    
+...
+
+  private void emotionHandler(){
+    if(previousEmotion == ""){
+      if(blendEmotion < blendFaceStop){
+        blendEmotion += blendSpeedEmotion;
+        emotionCase(emotion);
+      }
+      else{
+        previousEmotion = emotion;
+      }
+    }
+    else{
+      if(previousEmotion != emotion){
+        if(blendEmotion > 0f){
+          blendEmotion -= blendSpeedEmotion;
+          emotionCase(previousEmotion);
+        }
+        else{
+          previousEmotion = emotion;
+        }
+      }
+      else{
+        if(blendEmotion < blendFaceStop){
+          blendEmotion += blendSpeedEmotion;
+          emotionCase(emotion);
+        }
+      }
+    }
+  }
+  
+...
+
+  private void emotionCase(string input){
+    //Determining which object is active/visible in the scene
+    if(input == "Fear"){
+      humanFaceParent.active = false;
+      gasMaskParent.active = true;
+    }
+    else{
+      humanFaceParent.active = true;
+      gasMaskParent.active = false;
+    }
+
+    //Emotion Case to identify what needs to happen visually to interact with the user
+    switch(input){
+      case "Anger":
+        skinnedMeshRenderer.SetBlendShapeWeight(0, blendEmotion);
+        break;
+      case "Disgust":
+        skinnedMeshRenderer.SetBlendShapeWeight(3, blendEmotion);
+        skinnedMeshRenderer.SetBlendShapeWeight(3, blendEmotion);
+        break;
+      case "Fear":
+        gasMaskParent.active = true;
+        break;
+      case "Happy":
+        skinnedMeshRenderer.SetBlendShapeWeight(2, blendEmotion);
+        break;
+      case "Sad":
+        skinnedMeshRenderer.SetBlendShapeWeight(3, blendEmotion);
+        break;
+      case "Surprise":
+        skinnedMeshRenderer.SetBlendShapeWeight(1, blendEmotion);
+        break;
+      case "Neutral":
+        //Do nothing its a neutral expression
+        break;
+      default:
+        humanFaceParent.active = true;
+        break;
+    }
+  }
+```
+
+&ensp;[From UdpSockets.cs](https://github.com/jjliska/capstone/blob/main/Code/UnityCode/UdpSocket.cs)
+
+</p>
+</details>
+
+#### Changing Music Based on Emotion and Location
+&ensp;We take emotion and facial data from the python script and pass it to a rotation object as well as an audio object that allows us to change the music depending on the mood shown as well as changing location to be directly behind where the arm considers itself to create a more interactive environment.
+
+<details><summary>C# Script</summary>
+<p>
+  
+```cs
+    audioRotation.transform.Rotate(0,rotation,0);
+    
+...
+
+  private void musicHandler(){
+    int compEmot = musicComparison(emotion);
+    int compPreEmot = musicComparison(previousEmotion);
+    if(compPreEmot == 0){
+      if(volume < 1.0f){
+        volume += volumeSpeed;
+        musicCase(compEmot);
+      }
+    }
+    else{
+      if(compPreEmot != compEmot){
+        if(volume > 0f){
+          volume -= volumeSpeed;
+          musicCase(compPreEmot);
+        }
+      }
+      else{
+        if(volume < 1.0f){
+          volume += volumeSpeed;
+          musicCase(compEmot);
+        }
+      }
+    }
+  }
+
+  // Change this to add more audio tracks
+  private void musicCase(int input){
+    if(input != 0){
+      if(input == 1){
+        musicPlayer1.volume = volume;
+      }
+      else if(input == 2){
+        musicPlayer2.volume = volume;
+      }
+      else if(input == 3){
+        musicPlayer3.volume = volume;
+      }
+    }
+  }
+
+
+  // This is made easier to access to allow for more string comparisons as there may be a change to the audio track later
+  private int musicComparison(string input){
+    if(input == "Happy" || input == "Surprise"){
+      return 1;
+    }
+    else if(input == "Anger" || input == "Disgust" || input == "Fear"){
+      return 2;
+    }
+    else if(input == "Neutral" || input == "Sad"){
+      return 3;
+    }
+    else{
+      return 0;
+    }
+  }
+```
+
+&ensp;[From UdpSockets.cs](https://github.com/jjliska/capstone/blob/main/Code/UnityCode/UdpSocket.cs)
+
+</p>
+</details>
+
 ## Links
 &ensp;<sup>[Back to Top](#AME-486---Capstone---Reflection)</sup>  
 &ensp;- A collab with some of the basic inverse kinematic models we used is available here: [Google Colab](https://colab.research.google.com/drive/112x_Fhu4YKPZFFK7a1mo7FeFkNSDPJKg?usp=sharing)  
 &ensp;- A link to all of the 3D printed parts we designed and printed: [3D Prints](https://github.com/jjliska/capstone/tree/main/3D-Prints)  
 &ensp;- The Fusion 360 Model created: [Fusion 360](https://a360.co/3mX6sYx) &ensp;&ensp; *Note it is a large file so it will take a while to render on a browser.*  
-&ensp;- A link to the FBX models, and shape keys attached to them, we created for this project: [Models](https://github.com/jjliska/capstone/tree/main/Media/FacialModels)
+&ensp;- A link to the FBX models, and shape keys attached to them, we created for this project: [Models](https://github.com/jjliska/capstone/tree/main/Media/FacialModels)  
+&ensp;- A link to all the music created by Jack Carroll: [Soundcloud](https://soundcloud.com/sodonttalksmack/sets/reflection)  
 
 ## References
 &ensp;<sup>[Back to Top](#AME-486---Capstone---Reflection)</sup>
