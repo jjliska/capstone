@@ -6,7 +6,7 @@
 &ensp;[Group Members](#Group-Members)  
 &ensp;[Project Description](#Project-Description)  
 &ensp;[Capstone Video](#Capstone-Video)  
-&ensp;[Improvements/Issues](#Improvements)  
+&ensp;[Improvements and Issues](#Improvements-and-Issues)  
 &ensp;[Demo Videos](#Demo-Videos)  
 &ensp;[Explanations](#Explanations)  
 &ensp;[Links](#Links)  
@@ -26,7 +26,7 @@
 &ensp;<sup>[Back to Top](#AME-486---Capstone---Reflection)</sup>  
 [![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/mnH26vL3UBw/0.jpg)](https://www.youtube.com/watch?v=mnH26vL3UBw)
 
-## Improvements/Issues  
+## Improvements and Issues  
 &ensp;<sup>[Back to Top](#AME-486---Capstone---Reflection)</sup>  
 #### Quick Links for Issues
 &ensp;[Emotion and Facial Tracking](#Emotion-and-Facial-Tracking)  
