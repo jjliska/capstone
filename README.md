@@ -6,7 +6,7 @@
 &ensp;[Group Members](#Group-Members)  
 &ensp;[Project Description](#Project-Description)  
 &ensp;[Capstone Video](#Capstone-Video)  
-&ensp;[Improvements/Issues](#Improvements/Issues)  
+&ensp;[Improvements/Issues](#Improvements)  
 &ensp;[Demo Videos](#Demo-Videos)  
 &ensp;[Explanations](#Explanations)  
 &ensp;[Links](#Links)  
